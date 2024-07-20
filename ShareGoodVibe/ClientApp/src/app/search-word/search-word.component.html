@@ -1,0 +1,25 @@
+<style>
+    fieldset {
+        margin: 8px;
+        border: 3px solid silver;
+        padding: 12px;
+        border-radius: 14px;
+        width: 189px;
+    }
+</style>
+<div class="container">
+
+    <fieldset>
+        <input type="text" style="width: 150px;"  size="150" width="48"  maxlength="150" value="Sydney" [(ngModel)]="placeId" />
+        <button class='btn btn-primary' (click)="sendNotification(placeId,typeId)">Search </button>
+        <table>
+            <tr>
+                <td> <input type="radio" name="type" value="image" [(ngModel)]="typeId" checked>image</td>
+                <td> <input type="radio" name="type" value="video" [(ngModel)]="typeId">video</td>
+                <td><input type="radio" name="type" value="pdf" [(ngModel)]="typeId">pdf</td>
+            </tr>
+
+        </table>
+
+        </fieldset>
+</div>

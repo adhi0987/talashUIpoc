@@ -1,0 +1,26 @@
+<td style="width:100px" wordwrap *ngFor="let col of columns ; last as isLast">
+  
+    <div  style=" width:200px;overflow-wrap: break-word;" class="text">
+        <img alt=".." src="{{bookmark['url']}}" width="200" height ="200"/>  
+    </div>
+    <!-- <div  *ngIf="!isLast && bookmark[1] == 'video'">
+           <figure class="col-md-4">
+            <video height ="400" class="video-fluid" autoplay loop muted>
+                <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
+            </video>       
+
+            <h3 class="text-center my-3"></h3>
+        
+    </figure>
+</div>
+  -->
+</td>
+
+
+
+<!--<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>-->
+<script>
+    $(function () {
+        $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+    });
+</script>
