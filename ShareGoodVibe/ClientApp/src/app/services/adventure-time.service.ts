@@ -127,8 +127,9 @@ export class AdventureTimeService {
   //video data ..
 
     getVideodata(searchword: string): string[] {
-       var url = "https://sharegoodthings.azurewebsites.net/weatherforecast/GetVideolist?input=" + "searchword";
+      // var url = "https://sharegoodthings.azurewebsites.net/weatherforecast/GetVideolist?input=" + "searchword";
 
+         var url = "https://talashvideo.azurewebsites.net/v1/VIDEO/rise";
         this.http.get<WeatherForecast1[]>(url).subscribe
             (
             result => {
