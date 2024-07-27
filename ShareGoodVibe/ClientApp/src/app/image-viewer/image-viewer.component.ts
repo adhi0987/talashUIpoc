@@ -1,4 +1,4 @@
-import { Component ,SimpleChanges } from '@angular/core';
+import { Component ,SimpleChanges,Input } from '@angular/core';
 import { AdventureTimeService } from '../services/adventure-time.service';
 
 @Component({
