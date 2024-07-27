@@ -140,8 +140,7 @@ export class AdventureTimeService {
             );
     }
     getImagedata(searchword: string): Observable<any[]> {
-      if (searchword == null || searchword == undefined)
-        searchword = "nature";
+    
         var url = "https://talashimages-c6bzfxfzezbzhwdv.australiasoutheast-01.azurewebsites.net/v1/image/" + searchword ;
 
 
