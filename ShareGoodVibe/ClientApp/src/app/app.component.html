@@ -119,11 +119,16 @@
 
         <!-- Header -->
         <div class="w3-container" style="margin-top:80px" id="showcase">
-            <h1><b>
+            <b>
             
               <img height="200" width = "1200" src="./../assets/logo.png" />
                     <h4><i>Fast social media search</i></h4>
-                </b></h1>
+                    <ul>
+                        <li>Website helps to search social medial videos,images and socaial contacts</li>
+                        <li>Uses some AI tools to transform data like video overlay or image background changes.</li>
+                        <li>Or simply it can evne get friends / users of social in your suburb.</li>
+                        </ul>
+                </b>
             <hr style="width:50px;border:5px solid red" class="w3-round">
         </div>
 
@@ -135,7 +140,11 @@
                     <my-video></my-video>
                 </div>
 
-                <div style='overflow:scroll; width:1200px;height:1400px;' *ngIf="type != 'video'">
+                <div *ngIf="type === 'image'">
+                    <app-image-viewer></app-image-viewer>
+                </div>             
+
+                <div style='overflow:scroll; width:1200px;height:1400px;' *ngIf="type != 'video' && type != 'image'">
                     <app-table [searchword]=searchword [type]="type"></app-table>
                 </div>
                 <div>

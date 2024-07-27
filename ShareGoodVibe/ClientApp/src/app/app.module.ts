@@ -14,7 +14,8 @@ import { SearchWordComponent } from './search-word/search-word.component';
 import { HomeComponent } from './home/home.component';
 
 import { NguiInViewComponent } from './ngui-in-view/ngui-in-view.component';
-import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+import { VideoplayerComponent } from './video-viewer/videoplayer.component';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component'
 import { PreviewComponent } from './preview/preview.component';
 import { ShareComponent } from './share/share.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -32,6 +33,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
         HomeComponent,        
         NguiInViewComponent,
         VideoplayerComponent,
+        ImageViewerComponent,
         PreviewComponent,
         ShareComponent,
         NavMenuComponent,
