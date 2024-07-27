@@ -13,6 +13,7 @@ export class ImageViewerComponent {
   imageList: any[] = [];
 
   constructor( private atService: AdventureTimeService) {
+    this.searchword ="nature";
 
     this.atService.getImagedata(this.searchword)
     .subscribe((res: any) => {
