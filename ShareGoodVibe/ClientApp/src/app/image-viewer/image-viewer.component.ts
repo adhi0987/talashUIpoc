@@ -26,6 +26,18 @@ export class ImageViewerComponent {
     });
 
   }
+  ngOnChanges(changes: SimpleChanges) {
+
+    this.atService.getImagedata(this.searchword)
+      .subscribe((res: any) => {
+        this.data = res;
+        this.data.forEach(x => console.log(x.url));
+        this.data.forEach(x => this.imageList.push(x.url));
+
+      }, (err: any) => {
+        console.log(err);
+      });
+  }
   ngInit()
   {
    
