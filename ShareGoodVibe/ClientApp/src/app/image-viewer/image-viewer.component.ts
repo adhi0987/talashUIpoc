@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,SimpleChanges } from '@angular/core';
 import { AdventureTimeService } from '../services/adventure-time.service';
 
 @Component({
@@ -9,7 +9,8 @@ import { AdventureTimeService } from '../services/adventure-time.service';
 export class ImageViewerComponent {
 
   data: any[] = [];
-  searchword: string = "";
+  //searchword: string = "";
+  @Input() searchword: string="";
   imageList: any[] = [];
 
   constructor( private atService: AdventureTimeService) {
