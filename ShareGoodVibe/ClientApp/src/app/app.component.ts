@@ -16,12 +16,14 @@ export class AppComponent {
     isAuthenticated: boolean = false;
     public userProfile: any;
     public urlEmit!: string;
+    public shareLink!: string;
 
     @ViewChild('modal', { read: false })
     modal!: ShareComponent;
     //public clickedEvent: Event;
     constructor(private modalService: ModalService) {
         this.searchword = "video";
+        this.type ="video";
 	}
     openModal(id: string) {
         this.modalService.open(id);
@@ -34,6 +36,7 @@ export class AppComponent {
       
         this.searchword = event.searchword ;
         this.type = event.type;
+        this.shareLink ="https://talash.azurewebsites.net" +"?type=" + this.type + "&searchword=" + this.searchword;
       
        
     }
@@ -45,6 +48,10 @@ export class AppComponent {
         console.log("url in parent  :" + this.url);
     }
 
+    ShowShreLink()
+    {
+        this.shareLink ="https://talash.azurewebsites.net" +"?type=" + this.type + "&searchword=" + this.searchword;
+    }
     
 
     openModal1() {

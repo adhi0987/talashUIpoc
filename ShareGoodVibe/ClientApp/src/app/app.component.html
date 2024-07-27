@@ -133,7 +133,11 @@
         </div>
 
         <!-- Photo grid (modal) -->
-
+        <div style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(97, 236, 97)" >
+        <button type="button" (click) = "ShowShreLink()" >Share</button> 
+        {{shareLink}}
+        </div>
+        <br>
         <div class="w3-row-padding">
             <div class="w3-half">
                 <div *ngIf="type === 'video'">

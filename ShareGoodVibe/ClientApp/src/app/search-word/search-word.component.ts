@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AdventureTimeService } from '../services/adventure-time.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -9,15 +10,18 @@ import { AdventureTimeService } from '../services/adventure-time.service';
 })
 export class SearchWordComponent implements OnInit {
 
-  constructor(srv : AdventureTimeService) { }
+  constructor(srv : AdventureTimeService,  private route: ActivatedRoute) {     
+    
+  }
 
     
     public Events1: Array<string> = ["live", "fastsearch", "fastsearch"];
     @Output() searchword = new EventEmitter < { searchword: string, type: string }>();
     typeId!: string;
     placeId!: string;
-    //More app code
-    //onSearch  
+   
+    
+    
     sendNotification(placeId: any,type: any) {
       
         this.searchword.emit({ searchword: placeId, type: this.typeId });
@@ -28,9 +32,16 @@ export class SearchWordComponent implements OnInit {
         this.searchword.emit({ searchword: 'rise', type: 'image' });
        
     }
-    ngOnInit() {
+    ngOnInit() {     
 
-        this.searchword.emit({ searchword: 'rise', type: 'image' });
+
+      var contenttype= new URLSearchParams(window.location.search).get('type');
+      var searchword= new URLSearchParams(window.location.search).get('searchword');
+    
+      if(contenttype == null )  contenttype ="image";
+      if (searchword == null ) searchword = "rise"; 
+
+        this.searchword.emit({ searchword: searchword, type: contenttype });
         console.log(this.Events1);
   }
 
