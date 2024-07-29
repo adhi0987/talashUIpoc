@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { AdventureTimeService } from '../services/adventure-time.service';
 
@@ -13,9 +13,10 @@ export class VideoplayerComponent {
     safeSrc: SafeResourceUrl;
     safeSrc2: SafeResourceUrl[] = [];
     videoids: WeatherForecast1[] = [];
+    @Input() searchword: string="";
     
     items: Array<string>;
-    searchword: string = "";
+    //searchword: string = "";
     data: any[] = [];
 
     constructor(private sanitizer: DomSanitizer, private atService: AdventureTimeService) {
@@ -35,6 +36,18 @@ export class VideoplayerComponent {
             }, (err: any) => {
                 console.log(err);
             });
+    }
+    ngOnChanges(changes: SimpleChanges) {
+
+        this.atService.getvideodata1(this.searchword)
+        .subscribe((res: any) => {
+            this.data = res;
+            this.data.forEach(x => console.log(x.name));
+            this.data.forEach(x =>this.safeSrc2.push(this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + x.name)));
+           
+        }, (err: any) => {
+            console.log(err);
+        });
     }
 
 }

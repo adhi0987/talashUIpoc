@@ -131,7 +131,7 @@ export class AdventureTimeService {
     }
     getvideodata1(searchword: string): Observable<any[]> {
         //var url = "https://sharegoodthings.azurewebsites.net/weatherforecast/GetVideolist?input=" + "searchword";
-        var url = "https://talashvideo.azurewebsites.net/v1/VIDEO/rise";
+        var url = "https://talashvideo.azurewebsites.net/v1/VIDEO/" + searchword;
 
 
         return this.http.get<any[]>(url)
