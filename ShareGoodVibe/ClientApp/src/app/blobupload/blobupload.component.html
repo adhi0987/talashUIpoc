@@ -1,0 +1,26 @@
+<script src="https://kit.fontawesome.com/7d2b65abd1.js" crossorigin="anonymous"></script>
+<div style="text-align:center; margin-top: 20px;">  
+    <h4>  
+      Upload, Download and Delete  Files  
+    </h4>  
+  </div>  
+    
+  <div class="blobstorage-section">  
+    <input #file type="file"   size="50" width="48"  maxlength="50" multiple (change)="upload(file.files)"  />
+
+     <input style="display: none;" type="file" id="fileUpload" #selectedFile [(ngModel)]="fileUpload" (click)="selectedFile.value = ''" value="" (change)="handleFileInput($event)" />  
+    <table style="margin-top: 20px;">  
+      <tr>  
+        <th class="column1">Uploaded Files</th>  
+        <th class="column2" style="text-align:center;">Download</th>  
+        <th class="column3" style="text-align:center;">Delete</th>  
+      </tr>  
+      <tr *ngFor="let file of files">  
+        <td class="column1">{{file}}</td>  
+        <td class="column2" style="text-align:center;cursor: pointer;" (click)="downloadFile(file)"><i class="fa fa-download"></i></td>  
+        <td class="column3" style="text-align:center;" (click)="deleteFile(file)">  
+          <img alt="Group Audit" src="../assets/icon-download.png" />  
+        </td>  
+      </tr>  
+    </table>  
+  </div>  

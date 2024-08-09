@@ -12,6 +12,7 @@ import { TableRowIncorrectComponent } from './table-row-incorrect/table-row-inco
 import { FileuploadComponent } from './file-upload/file-upload.component';
 import { SearchWordComponent } from './search-word/search-word.component';
 import { HomeComponent } from './home/home.component';
+import {  BlobuploadComponent} from './blobupload/blobupload.component'
 
 import { NguiInViewComponent } from './ngui-in-view/ngui-in-view.component';
 import { VideoplayerComponent } from './video-viewer/videoplayer.component';
@@ -37,7 +38,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
         PreviewComponent,
         ShareComponent,
         NavMenuComponent,
-        
+        BlobuploadComponent,
         
 
     ],
