@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script src="https://kit.fontawesome.com/7d2b65abd1.js" crossorigin="anonymous"></script>
 <style>
     body,
     h1,
@@ -11,7 +12,10 @@
     h3,
     h4,
     h5 {
-        font-family: "Poppins", sans-serif
+        font-family: Calibri;  
+    box-shadow: 0 1px 4px 0 #9b9b9b;  
+    background-color: orange;  
+    font-size: :xx-large;
     }
 
     body {
@@ -133,13 +137,25 @@
         </div>
 
         <!-- Photo grid (modal) -->
-        <div style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(97, 236, 97)" >
+        <div style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(223, 238, 223)" >
         <button type="button" (click) = "ShowShreLink()" >Share</button> 
         {{shareLink}}
         </div>
+        <div class="w3-half">
+                <details>
+  <summary style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(223, 238, 223)">
+    Upload content
+    <span class="icon">👇</span>
+  </summary>
+  <p>
+    <app-blobupload></app-blobupload>
+  </p>
+</details>
         <br>
         <div class="w3-row-padding">
-            <div class="w3-half">
+            
+
+               
                 <div *ngIf="type === 'video'">
                     <my-video  [searchword]=searchword></my-video>
                 </div>
