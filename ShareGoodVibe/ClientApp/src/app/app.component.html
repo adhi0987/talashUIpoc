@@ -110,7 +110,7 @@
 
     </header>
 
-    <img height="170" width = "2000" src="./../assets/logo.png" />
+    <img height="200" width = "1200" src="./../assets/logo.png" />
 
     <!-- Overlay effect when opening sidebar on small screens -->
     <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
@@ -121,17 +121,17 @@
 
         <!-- Header -->
         <div class="w3-container" style="margin-top:80px" id="showcase">
-            <b>
+            
             
              
                     <h4><i>Fast social media search</i></h4>
                    
-                
-           
-      
+            
+        
+        </div>
 
         <!-- Photo grid (modal) -->
-        <div style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(223, 238, 223);height:50" >
+        <div style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(223, 238, 223)" >
         <button type="button" (click) = "ShowShreLink()" >Share</button> 
         {{shareLink}}
         </div>
@@ -153,7 +153,7 @@
                 <div *ngIf="type === 'video'">
                     <my-video  [searchword]=searchword></my-video>
                 </div>
-
+a
                 <div *ngIf="type === 'image'">
                     <app-image-viewer  [searchword]=searchword></app-image-viewer>
                 </div>             
