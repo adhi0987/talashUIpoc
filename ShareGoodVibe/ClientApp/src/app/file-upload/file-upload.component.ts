@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { HttpClient, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http';
 
 @Component({
@@ -9,7 +9,13 @@ import { HttpClient, HttpRequest, HttpEventType, HttpResponse } from '@angular/c
 export class FileuploadComponent {
     public progress!: number;
     public message!: string;
+    @Output() showHideFiles = new EventEmitter < { ShowFileExplorer: boolean}>();
+
     constructor(private http: HttpClient) { }
+    ShowHideFiles(e: Event)
+    {        
+        this.showHideFiles.emit({ ShowFileExplorer: true });
+    }
 
     upload(files : any) {
         if (files.length === 0)

@@ -9,14 +9,15 @@
 </style>
 <fieldset>
 <h4><font font-color="blue"></font>Upload&nbsp;Files  </h4>
-<select>
+<!-- <select>
     <option value="image">Image</option>
     <option value="video">Video</option>
     <option value="pdf">Pdf</option>
     <option value="youtube">Youtube</option>
     <option value="facebook">Facebook</option>
 </select>
-<input #file type="file"   size="50" width="48"  maxlength="50" multiple (change)="upload(file.files)"  />
+<input #file type="file"   size="50" width="48"  maxlength="50" multiple (change)="upload(file.files)"  /> -->
+<input type="checkbox" (click)="ShowHideFiles($event)"> Show Content panel
 <br />
 <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
     {{progress}}%
