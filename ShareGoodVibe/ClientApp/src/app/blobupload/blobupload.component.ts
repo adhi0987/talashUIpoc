@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlobuploadComponent  implements OnInit{
   files: string[] = [];  
+  filteredFiles : string[] = [];
   fileToUpload: FormData | undefined;  
   fileUpload: any;  
   fileUpoadInitiated: boolean = false;  
@@ -131,6 +132,17 @@ export class BlobuploadComponent  implements OnInit{
     //     //     this.message = event.body.toString();
     // });
 }  
+  FilterFiles(searchText: string) {
+    if (searchText == '') {
+      this.files = this.files;
+    } else {
+      this.filteredFiles = this.files.filter((element) => {
+        element.toLowerCase() == searchText.toLowerCase();
+      });
+
+      this.files = this.filteredFiles;
+    }
+  }
 }
 
 interface HTMLInputEvent extends Event {
