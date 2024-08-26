@@ -20,6 +20,9 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component'
 import { PreviewComponent } from './preview/preview.component';
 import { ShareComponent } from './share/share.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { AuthService } from './services/auth.service';
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 @NgModule({
@@ -38,7 +41,9 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
         PreviewComponent,
         ShareComponent,
         NavMenuComponent,
+        
         BlobuploadComponent,
+        ProfileComponent,
         
 
     ],
@@ -53,7 +58,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
             
         ]),    
     ],
-	providers: [AdventureTimeService],
+	providers: [AdventureTimeService , AuthService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

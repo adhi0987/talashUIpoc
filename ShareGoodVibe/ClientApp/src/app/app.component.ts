@@ -1,5 +1,6 @@
 import { Component, ViewChild} from '@angular/core';
 import { ModalService } from './services/modal.service';
+import { AuthService } from './services/auth.service';
 
 import { ShareComponent } from './share/share.component';
 
@@ -18,12 +19,14 @@ export class AppComponent {
     public urlEmit!: string;
     public shareLink!: string;
 
+    
     @ViewChild('modal', { read: false })
     modal!: ShareComponent;
     //public clickedEvent: Event;
-    constructor(private modalService: ModalService) {
+    constructor(private modalService: ModalService, public auth:AuthService) {
         this.searchword = "video";
         this.type ="video";
+        auth.handleAuthentication();
 	}
     openModal(id: string) {
         this.modalService.open(id);

@@ -124,8 +124,23 @@
         <div class="w3-container" id="showcase">
             
             
-             
+             <table>
+                <tr>
+                    <td style="width:500px">
+                  
                     <h4><i>Fast social media search</i></h4>
+                    </td><td style="width:500px">
+                    <a *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
+                <span class='glyphicon glyphicon-log-in'></span><img height=50 width=50 src="https://th.bing.com/th/id/OIP.PHG8dkRgh4OnHjNQAgz7ogHaH0?rs=1&pid=ImgDetMain" /> Log In
+            </a>
+        </td>
+        <td>
+            <a *ngIf="auth.isAuthenticated()" [routerLink]='["/profile"]' >
+                <span class='glyphicon glyphicon-user'></span>  <app-profile></app-profile>
+            </a>
+        </td>
+        </tr>
+        </table>
                    
             
         
