@@ -13,6 +13,7 @@ export class BlobuploadComponent  implements OnInit{
   fileUpload: any;  
   fileUpoadInitiated: boolean = false;  
   fileDownloadInitiated: boolean = false;  
+  value:string ="";
   private baseUrl = 'https://talashfileuploadapi-ctapfke2bwcwdghx.australiasoutheast-01.azurewebsites.net/api/blobstorage';  
 
   constructor(private http: HttpClient) { }
@@ -75,7 +76,7 @@ export class BlobuploadComponent  implements OnInit{
       .subscribe((result: any) => {  
         if (result.type != 'text/plain') {  
           var blob = new Blob([result]);  
-          //let saveAs = require('file-saver');  
+          //let savAs = require('file-saver');  
           let file = fileName;  
           //saveAs(blob, file);  
           this.fileDownloadInitiated = false;  
@@ -132,16 +133,15 @@ export class BlobuploadComponent  implements OnInit{
     //     //     this.message = event.body.toString();
     // });
 }  
-  FilterFiles(searchText: string) {
-    if (searchText == '') {
-      this.files = this.files;
-    } else {
-      this.filteredFiles = this.files.filter((element) => {
-        element.toLowerCase() == searchText.toLowerCase();
+  FilterFiles(searchText: any) {
+  
+      this.files = this.files.filter((element) => {
+        
+        element.indexOf('ads') !== -1;
       });
 
-      this.files = this.filteredFiles;
-    }
+     
+    
   }
 }
 
