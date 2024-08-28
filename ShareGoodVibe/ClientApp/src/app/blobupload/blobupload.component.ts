@@ -9,6 +9,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class BlobuploadComponent  implements OnInit{
   files: string[] = [];  
+  publicFiles: string[] = []; 
   filteredFiles : string[] = [];
   fileToUpload: FormData | undefined;  
   fileUpload: any;  
@@ -27,21 +28,24 @@ export class BlobuploadComponent  implements OnInit{
   showBlobs() {  
     let userid = "Ananymous";
     if (this.auth.isAuthenticated()) {
-      console.log("isauthenticated");
       this.auth.getProfile((err: any, profile: any) => {
-        console.log("get profile");
-        console.log(profile);
+
         this.profile = profile;
          if (profile)
           userid = profile.name;
+         console.log("Userid" + userid);
          this.http.get<string[]>(this.baseUrl + '/listfilesByTags?userid=' + userid).subscribe(result => {
-      this.files = result;
-    }, error => console.error(error));  
- 
+           this.files = result;
+         }, error => console.error(error));  
       });
     }
-    console.log("Userid" + userid);
-   
+ 
+
+    userid = "Ananymous";
+    this.http.get<string[]>(this.baseUrl + '/listfilesByTags?userid=' + userid).subscribe(result => {
+      this.publicFiles = result;
+    }, error => console.error(error));  
+
   
   }  
   
