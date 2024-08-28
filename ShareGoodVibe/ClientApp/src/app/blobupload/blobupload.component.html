@@ -24,4 +24,18 @@
         </td>  
       </tr>  
     </table>  
+    <table style="margin-top: 20px;">  
+      <tr>  
+        <th class="column1">Uploaded Files</th>  
+        <th class="column2" style="text-align:center;">Download</th>  
+          
+      </tr>  
+      <tr *ngFor="let publicfile of publicFiles">  
+        <td class="column1">{{publicFiles}}</td>  
+        <td class="column2" style="text-align:center;cursor: pointer;" (click)="downloadFile(publicfile)"><i class="fa fa-download"></i></td>  
+        <td class="column3" style="text-align:center;" (click)="deleteFile(publicfile)">  
+          <img alt="Group Audit" src="../assets/icon-download.png" />  
+        </td>  
+      </tr>  
+    </table>  
   </div>  
