@@ -1,5 +1,6 @@
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-blobupload',
@@ -14,18 +15,31 @@ export class BlobuploadComponent  implements OnInit{
   fileUpoadInitiated: boolean = false;  
   fileDownloadInitiated: boolean = false;  
   value:string ="";
+  profile: any;
   private baseUrl = 'https://talashfileuploadapi-ctapfke2bwcwdghx.australiasoutheast-01.azurewebsites.net/api/blobstorage';  
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public auth:AuthService) { }
 
   ngOnInit(): void {  
     this.showBlobs();  
   }  
   
   showBlobs() {  
-    this.http.get<string[]>(this.baseUrl + '/listfiles').subscribe(result => {  
-      this.files = result;  
+    let userid = "Ananymous";
+    if (this.auth.isAuthenticated()) {
+      this.auth.getProfile((err: any, profile: any) => {
+
+        this.profile = profile;
+         if (profile)
+          userid = profile.name;
+      });
+    }
+    console.log("Userid" + userid);
+    this.http.get<string[]>(this.baseUrl + '/listfilesByTags?userid=' + userid).subscribe(result => {
+      this.files = result;
     }, error => console.error(error));  
+ 
+  
   }  
   
   addFile() {  
