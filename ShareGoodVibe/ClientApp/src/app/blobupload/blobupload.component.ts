@@ -34,13 +34,14 @@ export class BlobuploadComponent  implements OnInit{
         this.profile = profile;
          if (profile)
           userid = profile.name;
-      });
-    }
-    console.log("Userid" + userid);
-    this.http.get<string[]>(this.baseUrl + '/listfilesByTags?userid=' + userid).subscribe(result => {
+         this.http.get<string[]>(this.baseUrl + '/listfilesByTags?userid=' + userid).subscribe(result => {
       this.files = result;
     }, error => console.error(error));  
  
+      });
+    }
+    console.log("Userid" + userid);
+   
   
   }  
   
