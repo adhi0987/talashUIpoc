@@ -33,9 +33,7 @@
       <tr *ngFor="let publicfile of publicFiles">  
         <td class="column1">{{publicfile}}</td>  
         <td class="column2" style="text-align:center;cursor: pointer;" (click)="downloadFile(publicfile)"><i class="fa fa-download"></i></td>  
-        <td class="column3" style="text-align:center;" (click)="deleteFile(publicfile)">  
-          <img alt="Group Audit" src="../assets/icon-download.png" />  
-        </td>  
+
       </tr>  
     </table>  
   </div>  
