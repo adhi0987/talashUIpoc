@@ -8,6 +8,6 @@
 export const AUTH_CONFIG: AuthConfig = {
     clientID: 'nnC1nPUIsJYbUSTPtTOREfDzjL0gfZ4I',
     domain: 'panchu.au.auth0.com',
-    callbackURL: 'http://localhost:4200/',
+    callbackURL: 'https://talash.azurewebsites.net/',
     apiUrl: 'https://panchu.au.auth0.com/api/v2/'
 };
