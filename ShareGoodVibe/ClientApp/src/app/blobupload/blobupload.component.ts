@@ -27,8 +27,10 @@ export class BlobuploadComponent  implements OnInit{
   showBlobs() {  
     let userid = "Ananymous";
     if (this.auth.isAuthenticated()) {
+      console.log("isauthenticated");
       this.auth.getProfile((err: any, profile: any) => {
-
+        console.log("get profile");
+        console.log(profile);
         this.profile = profile;
          if (profile)
           userid = profile.name;
