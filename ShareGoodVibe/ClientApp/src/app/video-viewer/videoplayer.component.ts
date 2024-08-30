@@ -27,15 +27,15 @@ export class VideoplayerComponent {
         console.log(this.items);
         this.safeSrc2.push(this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/c9F5kMUfFKk"));
 
-        this.atService.getvideodata1(this.searchword)
-            .subscribe((res: any) => {
-                this.data = res;
-                this.data.forEach(x => console.log(x.name));
-                this.data.forEach(x =>this.safeSrc2.push(this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + x.name)));
+        // this.atService.getvideodata1(this.searchword)
+        //     .subscribe((res: any) => {
+        //         this.data = res;
+        //         this.data.forEach(x => console.log(x.name));
+        //         this.data.forEach(x =>this.safeSrc2.push(this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + x.name)));
                
-            }, (err: any) => {
-                console.log(err);
-            });
+        //     }, (err: any) => {
+        //         console.log(err);
+        //     });
     }
     ngOnChanges(changes: SimpleChanges) {
 
