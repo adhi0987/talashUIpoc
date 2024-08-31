@@ -139,7 +139,7 @@ export class BlobuploadComponent  implements OnInit{
       this.fileUpload = '';  
       if (response == true) {
        console.log("berofe http get ")
-        this.http.get(this.baseUrl+'/SetTags?filename='+fname+ "&userid=dasaradh reddy"+"&typ=video")
+        this.http.get(this.baseUrl+'/SetTags?filename='+fname+ "&userid=dasaradh reddy"+"&type=video")
     .subscribe((response:any) => {
       this.showBlobs();  
 
