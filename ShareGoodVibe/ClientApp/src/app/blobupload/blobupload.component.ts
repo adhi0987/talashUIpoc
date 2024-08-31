@@ -78,7 +78,8 @@ export class BlobuploadComponent  implements OnInit{
         .subscribe((response: any) => {  
           this.fileUpoadInitiated = false;  
           this.fileUpload = '';  
-          if (response == true) {  
+          if (response == true) {
+            console.log("hrehrehrerherherh");
             this.showBlobs();  
           }  
           else {  
@@ -123,17 +124,26 @@ export class BlobuploadComponent  implements OnInit{
         return;
 
     const formData = new FormData();
+    let fname = "";
 
     for (let file of files)
+    {
         formData.append("asset",file,file.name, );
+        fname = file.name;
+    }
     this.fileToUpload = formData;       
     
     this.http.post( this.baseUrl + '/insertfile', this.fileToUpload) 
       .subscribe((response: any) => {  
       this.fileUpoadInitiated = false;  
       this.fileUpload = '';  
-      if (response == true) {  
-        this.showBlobs();  
+      if (response == true) {
+       console.log("berofe http get ")
+        this.http.get(this.baseUrl+'/SetTags?filename='+fname+ "&userid=dasaradh reddy"+"&typ=video")
+    .subscribe((response:any) => {
+      this.showBlobs();  
+
+    });
       }  
       else {  
         alert('Error occured!');  
@@ -142,17 +152,7 @@ export class BlobuploadComponent  implements OnInit{
     },  
       err => console.log(err),  
     );  
-    // const uploadReq = new HttpRequest('POST', "http://localhost:4000/api/insertfile", formData, {
-    //     reportProgress: true,
-    // });
-
-    // this.http.request(uploadReq).subscribe(event => {
-    //     console.log("updload is progress")
-    //     // if (event.type === HttpEventType.UploadProgress)
-    //     //     this.progress = Math.round(100 * event.loaded / event.total);
-    //     // else if (event.type === HttpEventType.Response)
-    //     //     this.message = event.body.toString();
-    // });
+    
 }  
   FilterFiles(searchText: any) {
   
