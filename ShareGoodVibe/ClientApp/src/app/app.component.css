@@ -262,3 +262,71 @@ details {
 .w3-tooltip, .w3-display-container {
     position: relative
 }
+.bigbuttons1{
+    height:100px;
+    width:300px;
+        /* Adding the rounded corners */
+        border-radius: 5px;
+
+        border: 1px solid #000;
+        padding: 10px 20px;
+        background: lightgreen ;
+        font-size: 2em;
+        cursor: pointer;
+    
+    }
+    .bigbuttons1{
+        height:60px;
+        width:350;
+            /* Adding the rounded corners */
+            border-radius: 5px;
+    
+            border: 1px solid #000;
+            padding: 10px 20px;
+            background: lightblue ;
+            font-size: 2em;
+            cursor: pointer;margin:10px;
+            margin-right:30px;
+        
+        }
+        .bigbuttons2{
+            height:60px;
+            width:350;    /* Adding the rounded corners */
+                border-radius: 5px;
+        
+                border: 1px solid #000;
+                padding: 10px 20px;
+                background: lightpink ;
+                font-size: 2em;
+                cursor: pointer;
+                margin-right:30px;
+            
+            }
+            .bigbuttons3{
+                height:60px;
+                width:350;    /* Adding the rounded corners */
+                    border-radius: 5px;
+            
+                    border: 1px solid #000;
+                    padding: 10px 20px;
+                    background:  rgb(230, 226, 187);
+                    font-size: 2em;
+                    cursor: pointer;
+                    margin-right:30px;
+                
+                }
+
+                .bigbuttons4{
+                    height:60px;
+                    width:350;    /* Adding the rounded corners */
+                        border-radius: 5px;
+                
+                        border: 1px solid #000;
+                        padding: 10px 20px;
+                        background:  orange;
+                        font-size: 2em;
+                        cursor: pointer;
+                        margin-right:30px;
+                    
+                    }
+    

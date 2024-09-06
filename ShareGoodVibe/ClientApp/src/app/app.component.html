@@ -146,20 +146,31 @@
         
         </div>
 
+
+        <table><tr><td>
+        <button  (click) ="ShowHidePanels('share')" class="bigbuttons1">Share Video</button>
+        </td><td>
+        <button  (click) ="ShowHidePanels('upload')" class="bigbuttons2">Upload Data</button>
+        </td><td><button class="bigbuttons3">FAQ Videos</button>
+        </td><td>
+            <button class="bigbuttons4">Chat rooms</button>
+            
+    </td></tr>
+    </table>
         <!-- Photo grid (modal) -->
-        <div style="align-items:right ;border:1px solid black;padding: 10px;background-color:##00d800" >
+        <div *ngIf="showSharePanel" style="align-items:right ;border:1px solid black;padding: 10px;background-color:##00d800" >
         <button type="button" (click) = "ShowShreLink()" >Share</button> 
         {{shareLink}}
         </div>
-        <div class="w3-half">
+        <div *ngIf="showUploadDataPanel" class="w3-half">
                 <details>
   <summary style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(223, 238, 223)">
     Upload content
     <span class="icon">👇</span>
   </summary>
-  <p>
+  <div >
     <app-blobupload></app-blobupload>
-  </p>
+  </div>
 </details>
         <br>
         <div class="w3-row-padding">

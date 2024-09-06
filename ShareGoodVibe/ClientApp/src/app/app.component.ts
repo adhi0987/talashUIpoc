@@ -18,6 +18,8 @@ export class AppComponent {
     public userProfile: any;
     public urlEmit!: string;
     public shareLink!: string;
+    public showSharePanel: boolean = false;
+    public showUploadDataPanel : boolean = false;
 
     
     @ViewChild('modal', { read: false })
@@ -59,5 +61,18 @@ export class AppComponent {
 
     openModal1() {
         this.modal.open();
+    }
+    ShowHidePanels(value:string)
+    {
+        if(value == 'upload')
+            {
+                this.showUploadDataPanel = true;
+                this.showSharePanel = false;
+            } 
+        if(value == 'share') 
+            {
+                this.showSharePanel = true;
+                this.showUploadDataPanel = false;
+            }
     }
 }
