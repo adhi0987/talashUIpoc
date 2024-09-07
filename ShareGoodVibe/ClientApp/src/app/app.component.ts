@@ -20,6 +20,7 @@ export class AppComponent {
     public shareLink!: string;
     public showSharePanel: boolean = false;
     public showUploadDataPanel : boolean = false;
+    public showFAQ: boolean = false;
 
     
     @ViewChild('modal', { read: false })
@@ -68,10 +69,18 @@ export class AppComponent {
             {
                 this.showUploadDataPanel = true;
                 this.showSharePanel = false;
+                this.showFAQ = false;
             } 
         if(value == 'share') 
             {
                 this.showSharePanel = true;
+                this.showUploadDataPanel = false;
+                this.showFAQ = false;
+            }
+            if(value == 'faq')
+            {
+                this.showFAQ = true;
+                this.showSharePanel = false;
                 this.showUploadDataPanel = false;
             }
     }

@@ -147,31 +147,43 @@
         </div>
 
 
-        <table><tr><td>
-        <button  (click) ="ShowHidePanels('share')" class="bigbuttons1">Share Video</button>
-        </td><td>
-        <button  (click) ="ShowHidePanels('upload')" class="bigbuttons1">Upload Data</button>
-        </td><td><button class="bigbuttons1">FAQ Videos</button>
-        </td><td>
-            <button class="bigbuttons1">Chat rooms</button>
-            
-    </td></tr>
-    </table>
+        <table>
+            <tr>
+                <td>
+                    <button (click)="ShowHidePanels('share')" class="bigbuttons1">Share Video</button>
+                </td>
+                <td>
+                    <button (click)="ShowHidePanels('upload')" class="bigbuttons1">Upload Data</button>
+                </td>
+                <td> <button (click)="ShowHidePanels('faq')" class="bigbuttons1">FAQ</button>
+                </td>
+                <td>
+                    <button (click)="ShowHidePanels('faq')" class="bigbuttons1">Chat rooms</button>
+        
+                </td>
+            </tr>
+        </table>
         <!-- Photo grid (modal) -->
         <div *ngIf="showSharePanel" style="align-items:right ;border:1px solid black;padding: 10px;background-color:##00d800" >
         <button type="button" (click) = "ShowShreLink()" >Share</button> 
         {{shareLink}}
+       
         </div>
         <div *ngIf="showUploadDataPanel" class="w3-half">
-                
-  <summary style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(223, 238, 223)">
-    Upload content
-    <span class="icon">👇</span>
-  </summary>
-  <div >
-    <app-blobupload></app-blobupload>
-  </div>
+        
+            <summary style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(223, 238, 223)">
+                Upload content
+                <span class="icon">👇</span>
+            </summary>
+            
+            <div>
+                <app-blobupload></app-blobupload>
+            </div>
+           
   </div><div>
+    <div *ngIf="showFAQ">
+                <app-meetings></app-meetings>
+            </div>
 
         <br>
         <div class="w3-row-padding">

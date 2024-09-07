@@ -148,16 +148,16 @@ details {
     }
     .bigbuttons1{
         height:60px;
-        width:350;
+        width:300;
             /* Adding the rounded corners */
-            border-radius: 5px;
+            border-radius: 25px;
     
             border: 1px solid #000;
             padding: 10px 20px;
-            background: lightblue ;
+            background:rgb(237, 213, 216) ;
             font-size: 2em;
             cursor: pointer;margin:10px;
-            margin-right:30px;
+            margin-right:20px;
         
         }
         
