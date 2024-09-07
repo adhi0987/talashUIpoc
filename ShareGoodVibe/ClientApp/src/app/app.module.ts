@@ -22,6 +22,7 @@ import { ShareComponent } from './share/share.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { AuthService } from './services/auth.service';
 import { ProfileComponent } from './profile/profile.component';
+import { MeetingsComponent } from './meetings/meetings.component'
 
 
 
@@ -44,7 +45,7 @@ import { ProfileComponent } from './profile/profile.component';
         
         BlobuploadComponent,
         ProfileComponent,
-        
+        MeetingsComponent
 
     ],
     imports: [
