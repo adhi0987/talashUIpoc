@@ -124,19 +124,29 @@
         <div class="w3-container" id="showcase">
             
             
-             <table>
+             <table class="bktable">
                 <tr>
-                    <td style="width:500px">
+                    <td style="width:1200px">
                   
                     <b><i>Fast social media search</i></b>
-                    </td><td style="width:500px">
-                    <a *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
-                <span class='glyphicon glyphicon-log-in'></span><img height=50 width=50 src="https://th.bing.com/th/id/OIP.PHG8dkRgh4OnHjNQAgz7ogHaH0?rs=1&pid=ImgDetMain" /> Log In
-            </a>
-        </td>
-        <td>
+                    </td>
+                    
+                    <td>
             <a *ngIf="auth.isAuthenticated()" [routerLink]='["/profile"]' >
                 <span class='glyphicon glyphicon-user'></span>  <app-profile></app-profile>
+            </a>
+        </td>
+       
+       
+        <td>
+            <a *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
+                <button class="btnlogin">Log out </button>
+               
+            </a></td>
+            <td style="width:500px">
+                    <a *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
+                        <button class="btnlogin">Login </button>
+                
             </a>
         </td>
         </tr>

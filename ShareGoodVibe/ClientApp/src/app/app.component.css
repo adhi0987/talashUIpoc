@@ -136,7 +136,7 @@ details {
     }
     .bigbuttons1{
         height:40px;
-        width:120;
+        width: 255px;
             /* Adding the rounded corners */
             align-items: center;
             background-color: initial;
@@ -153,8 +153,7 @@ details {
             justify-content: center;
             letter-spacing: .04em;
             line-height: 16px;
-            margin: 0;
-            padding: 18px 18px;
+            margin: 10px;
             text-align: center;
             text-decoration: none;
             text-shadow: rgba(248, 85, 85, 0.4) 0 0 4px,rgba(255, 255, 255, 0.2) 0 0 12px,rgba(57, 31, 91, 0.6) 1px 1px 4px,rgba(57, 31, 91, 0.32) 4px 4px 16px;
@@ -162,9 +161,27 @@ details {
             -webkit-user-select: none;
             touch-action: manipulation;
             vertical-align: baseline;
-            padding:15px;
+            padding:20px;
+
         
         
+        }
+        .bktable {
+            background: repeating-linear-gradient(
+                45deg,
+                khaki 0%,
+                green 100%
+            );
+        }
+        .btnlogin {
+            cursor: pointer;
+            border: 1px solid #3498db;
+            background-color: rgba(24, 100, 171, 0.1);
+            height: 40px;
+            width: 160px;
+            color:white;
+            font-size: 1.5em;
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
         }
         
         
