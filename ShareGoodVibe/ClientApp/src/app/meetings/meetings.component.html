@@ -2,7 +2,7 @@
 
     <tr><td  >
         <div class="bigbuttons1">
-        <iframe width="520" height="300" src="http://www.youtube.com/embed/kOfOADtiB9I?autoplay=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="520" height="380" src="http://www.youtube.com/embed/kOfOADtiB9I" frameborder="0" allowfullscreen></iframe>
     </div>
     </td>
 <td  >
@@ -16,12 +16,14 @@
         <input type="datetime-local" style="width:250px" />
     </div>
     <div style="padding:10px">
-        <button>Create Meeting</button>
+        <button  disabled=!this.auth.isAuthenticated     (click)="createMeeting()">Create Meeting</button>
+       <H5> <i>Please note that Only logged in users can create meeting.</i></H5>
     
     </div>
     <div style="padding:10px">
         <label>Meeting URL:</label>
-        {{url}}
+       
+      <input style="width:400px" value='https://app.dyte.io/v2/meeting?id={{meetingid}}' type="text "/> 
     </div>
 </div>
  

@@ -23,6 +23,7 @@ export class AdventureTimeService {
     public CHARACTERS: any[] = [];
     public BookMarks: any[] = [];
     public CHARACTERS1: any[] = [];
+    public meetinginfo: any = "";
     constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
         this.http = http;
          http.get<WeatherForecast[]>('https://sharegoodthings.azurewebsites.net/v1/users/rise').subscribe
@@ -139,6 +140,31 @@ export class AdventureTimeService {
                 product => this.videoids3 = product
             );
     }
+
+
+    createMeeting(userid: string, time : string) :Observable<string> {
+        //var url = "https://sharegoodthings.azurewebsites.net/weatherforecast/GetVideolist?input=" + "searchword";
+        var url = "https://talashvideo.azurewebsites.net/v1/createmeeting/?userid=dasradh&schedule=today" ;
+
+
+         this.http.post<Observable<string>>(url,{"userid":userid,"schedule":time}) .subscribe(
+
+            result => {
+               // console.log(JSON.stringify(result));
+             this.meetinginfo = JSON.stringify(result);
+
+    
+            }
+         )      
+                
+            
+          //  console.log("test" + JSON.stringify(this.meetinginfo));
+            return of(this.meetinginfo);
+           
+            
+    }
+
+
     getImagedata(searchword: string): Observable<any[]> {
     
         var url = "https://talashimages-c6bzfxfzezbzhwdv.australiasoutheast-01.azurewebsites.net/v1/image/" + searchword ;
