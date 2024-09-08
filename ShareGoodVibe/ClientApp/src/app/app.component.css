@@ -169,8 +169,8 @@ details {
         .bktable {
             background: repeating-linear-gradient(
                 45deg,
-                khaki 0%,
-                green 100%
+                white 0%,
+                lightblue 100%
             );
         }
         .btnlogin {
