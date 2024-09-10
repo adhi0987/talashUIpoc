@@ -23,6 +23,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { AuthService } from './services/auth.service';
 import { ProfileComponent } from './profile/profile.component';
 import { MeetingsComponent } from './meetings/meetings.component'
+import { DyteComponentsModule } from '@dytesdk/angular-ui-kit';
 
 
 
@@ -46,10 +47,12 @@ import { MeetingsComponent } from './meetings/meetings.component'
         BlobuploadComponent,
         ProfileComponent,
         MeetingsComponent
+    
 
     ],
     imports: [
         BrowserModule,
+        DyteComponentsModule,
       
         HttpClientModule,
         FormsModule, ReactiveFormsModule,
