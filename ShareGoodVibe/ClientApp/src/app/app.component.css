@@ -176,10 +176,10 @@ details {
         .btnlogin {
             cursor: pointer;
             border: 1px solid #3498db;
-            background-color: rgba(24, 100, 171, 0.1);
+            background-color: #3c07071a;
             height: 40px;
             width: 160px;
-            color:white;
+            color:black;
             font-size: 1.5em;
             box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
         }

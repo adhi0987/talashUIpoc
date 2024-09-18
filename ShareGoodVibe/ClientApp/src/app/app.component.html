@@ -143,7 +143,7 @@
                 <button class="btnlogin">Log out </button>
                
             </a></td>
-            <td style="width:500px">
+            <td style="width:200px">
                     <a *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
                         <button class="btnlogin">Login </button>
                 
@@ -151,7 +151,7 @@
         </td>
         </tr>
         </table>
-                   
+                <br>   
             
         
         </div>
@@ -168,7 +168,7 @@
                 <td> <button (click)="ShowHidePanels('faq')" class="bigbuttons1">FAQ</button>
                 </td>
                 <td>
-                    <button (click)="ShowHidePanels('faq')" class="bigbuttons1">Chat rooms</button>
+                    <button (click)="ShowHidePanels('chatrooms')" class="bigbuttons1">Chat rooms</button>
         
                 </td>
             </tr>
@@ -194,6 +194,10 @@
     <div *ngIf="showFAQ">
                 <app-meetings></app-meetings>
             </div>
+            <div *ngIf="showChatrooms">
+                <app-chatrooms></app-chatrooms>
+            </div>
+
 
         <br>
         <div class="w3-row-padding">

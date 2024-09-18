@@ -24,6 +24,7 @@ import { AuthService } from './services/auth.service';
 import { ProfileComponent } from './profile/profile.component';
 import { MeetingsComponent } from './meetings/meetings.component'
 import { DyteComponentsModule } from '@dytesdk/angular-ui-kit';
+import { ChatroomsComponent} from './chatrooms/chatrooms.component'
 
 
 
@@ -46,7 +47,8 @@ import { DyteComponentsModule } from '@dytesdk/angular-ui-kit';
         
         BlobuploadComponent,
         ProfileComponent,
-        MeetingsComponent
+        MeetingsComponent,
+        ChatroomsComponent
     
 
     ],

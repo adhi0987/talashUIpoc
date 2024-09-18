@@ -21,6 +21,7 @@ export class AppComponent {
     public showSharePanel: boolean = false;
     public showUploadDataPanel : boolean = false;
     public showFAQ: boolean = false;
+    public showChatrooms:boolean = false;
 
     
     @ViewChild('modal', { read: false })
@@ -70,18 +71,29 @@ export class AppComponent {
                 this.showUploadDataPanel = true;
                 this.showSharePanel = false;
                 this.showFAQ = false;
+                this.showChatrooms = false;
             } 
         if(value == 'share') 
             {
                 this.showSharePanel = true;
                 this.showUploadDataPanel = false;
                 this.showFAQ = false;
+                this.showChatrooms = false;
             }
             if(value == 'faq')
             {
                 this.showFAQ = true;
                 this.showSharePanel = false;
                 this.showUploadDataPanel = false;
+                this.showChatrooms = false;
+            }
+            if (value == 'chatrooms')
+            {
+                this.showChatrooms = true;
+                this.showFAQ = false;
+                this.showSharePanel = false;
+                this.showUploadDataPanel = false;
+
             }
     }
 }
