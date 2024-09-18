@@ -1,5 +1,5 @@
 
-<table style="margin-left: 200px" >
+<table style="margin-left: 100px" >
 
     <tr>
 <td  >
@@ -13,17 +13,33 @@
         <input type="datetime-local" style="width:250px" />
     </div>
     <div style="padding:10px">
-        <button      >Create Meeting</button>
+        <button    (click)="createMeeting()"   >Create Meeting</button>
        <b> <i>Please note that Only logged in users can create meeting.</i></b>
     
     </div>
-    <div style="padding:10px">
-        <label>Meeting creation status:</label>
+    <div style="padding:10px">  
+        
        
       <!-- <input style="width:400px" value='https://app.dyte.io/v2/meeting?id={{meetingid}}' type="text "/>  -->
     </div>
 </div>
  
-</td></tr>
+</td>
+<td>
+    <div class="bigbuttons5">
+   
+    
+    <button class="pushable"><span class="front">
+        Physics class
+      </span></button> <hr>
+    <button class="pushable" ><span class="front">
+        Maths class
+      </span></button><hr>
+    <button class="pushable"><span class="front">
+        Computer class
+      </span></button>
+    </div>
+</td>
+</tr>
 </table>
 

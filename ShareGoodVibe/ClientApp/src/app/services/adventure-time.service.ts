@@ -144,13 +144,14 @@ export class AdventureTimeService {
 
     createMeeting(userid: string, time : string) :Observable<string> {
         //var url = "https://sharegoodthings.azurewebsites.net/weatherforecast/GetVideolist?input=" + "searchword";
-        var url = "https://talashvideo.azurewebsites.net/v1/createmeeting/?userid=dasradh&schedule=today" ;
+       // var url = "https://talashvideo.azurewebsites.net/v1/createmeeting/?userid=dasradh&schedule=today" ;
+        var url = "https://talashvideo.azurewebsites.net/v1/createmeeting/?userid=" + userid +"&schedule=today";
 
 
          this.http.post<Observable<string>>(url,{"userid":userid,"schedule":time}) .subscribe(
 
             result => {
-               // console.log(JSON.stringify(result));
+               
              this.meetinginfo = JSON.stringify(result);
 
     
