@@ -4,16 +4,26 @@
     <tr>
 <td  >
     <div class="bigbuttons1">
-           <div style="padding:20px">
+           <div >
         <label style="padding:20px">UserName: </label>
-        <input type="Text" style="width:250px" />
+        <input type="Text" [(ngModel)]="userid" style="width:250px" />
     </div>
-    <div style="padding:10px">
+    <div >
         <label style="padding:20px">Select Time</label>
         <input type="datetime-local" style="width:250px" />
     </div>
+    <div >
+        <label style="padding:20px">Room Name</label>
+        <select [(ngModel)]="roomname" type="datetime-local" style="width:250px" >
+            <option>Physics</option>
+            <option>Maths</option>
+            <option>Computers</option>
+        </select>
+    </div>
     <div style="padding:10px">
         <button    (click)="createMeeting()"   >Create Meeting</button>
+        <button    (click)="createMeeting()"   >Join Meeting</button>
+        <br>
        <b> <i>Please note that Only logged in users can create meeting.</i></b>
     
     </div>
@@ -29,17 +39,22 @@
     <div class="bigbuttons5">
    
     
-    <button class="pushable"><span class="front">
-        Physics class
+    <button disabled="true" (click)="JoinMeetingroom()" class="pushable"><span class="front">
+        Physics
       </span></button> <hr>
-    <button class="pushable" ><span class="front">
-        Maths class
+    <button disabled="true" (click)="JoinMeetingroom()" class="pushable" ><span class="front">
+        Maths 
       </span></button><hr>
-    <button class="pushable"><span class="front">
+    <button disabled="true" (click)="JoinMeetingroom()" class="pushable"><span class="front">
         Computer class
+      </span></button>
+      <button (click)="JoinMeetingroom()"  > <span >
+        Join
       </span></button>
     </div>
 </td>
 </tr>
 </table>
-
+<div *ngIf="showMeetingroom" >
+    <app-meetings></app-meetings>
+</div>

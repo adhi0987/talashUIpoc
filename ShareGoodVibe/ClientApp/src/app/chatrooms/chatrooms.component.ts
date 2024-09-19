@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AdventureTimeService } from '../services/adventure-time.service';
 import { forkJoin } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-chatrooms',
@@ -9,18 +10,60 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./chatrooms.component.css']
 })
 export class ChatroomsComponent {
+  userid: string = "";
+  roomname: string = "";
+
+  mathsApiKey: string = "";
+  physicsApiKey: string = "";
+  computersApiKey: string = "";
+  showMeetingroom: boolean = false;
 
   constructor(public service: AdventureTimeService) {
+    // let k = this.service.createMeeting("test","test");
+
   }
 
   createMeeting() {
 
-    let k = this.service.createMeeting("this.username", "today");
+    let k = this.service.createMeeting(this.userid, this.roomname);
     forkJoin({
       k
-    }).subscribe((result) => {
+    }).subscribe((result: any) => {
+      //let dat :meetingdata = JSON.parse(result.k);
+
+
+      console.log("Chat room" + result.k);
+      var k = JSON.parse((result.k));
+
+      //.log("chat room" + k);
+
+
+     // console.log("chatroom" + k[0].UserName);
+     // console.log("chat room " + k[0].rooms[0].MeetingRoomtitle);
+
+    //  console.log("chat room " + result.k[0].UserName);
+      //this.mathsApiKey = k[0].rooms[0].ApiKey;
+      //console.log("chat rooms " +dat.rooms);
+      //console.log("chat room" + dat.UserName)
+
+
 
     });
 
   }
+  JoinMeetingroom()
+  {
+   // this.updateUrl();
+   console.log("Joinmeetingruom");
+     this.showMeetingroom = true;
+
+      
+  }
+  updateUrl() {
+   // this._location.href = "http://localhost:4200/?" + "searchparm =" + this.mathsApiKey 
+  }
+}
+interface meetingdata {
+  UserName: string;
+  rooms: any;
 }

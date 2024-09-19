@@ -145,22 +145,21 @@ export class AdventureTimeService {
     createMeeting(userid: string, time : string) :Observable<string> {
         //var url = "https://sharegoodthings.azurewebsites.net/weatherforecast/GetVideolist?input=" + "searchword";
        // var url = "https://talashvideo.azurewebsites.net/v1/createmeeting/?userid=dasradh&schedule=today" ;
-        var url = "https://talashvideo.azurewebsites.net/v1/createmeeting/?userid=" + userid +"&schedule=today";
+        var url = "https://talashvideo.azurewebsites.net/v1/createmeetingandsaveinfo/?userid=" + userid +"&schedule="+time;
 
 
-         this.http.post<Observable<string>>(url,{"userid":userid,"schedule":time}) .subscribe(
+         this.http.post<Observable<any>>(url,{"userid":userid,"schedule":time}) .subscribe(
 
             result => {
-               
-             this.meetinginfo = JSON.stringify(result);
-
-    
+              // console.log("service"+ result);
+               var k = JSON.parse(JSON.stringify(result));
+               var kkk:meetingdata = JSON.parse(k)       
+               this.meetinginfo = kkk;    
             }
-         )      
-                
+         )             
             
           //  console.log("test" + JSON.stringify(this.meetinginfo));
-            return of(this.meetinginfo);
+            return of(JSON.stringify(this.meetinginfo));
            
             
     }
@@ -204,4 +203,7 @@ interface WeatherForecast1 {
    
 }
 
-
+interface meetingdata {
+    UserNme: string;
+    rooms: any;
+  }
