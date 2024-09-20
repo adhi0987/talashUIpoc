@@ -2,19 +2,19 @@
 <table style="margin-left: 100px" >
 
     <tr>
-<td  >
+<td  style="height:500px">
     <div class="bigbuttons1">
            <div >
-        <label style="padding:20px">UserName: </label>
-        <input type="Text" [(ngModel)]="userid" style="width:250px" />
+        <label style="padding:10px">UserName: </label>
+        <input style="padding:20px" type="Text" [(ngModel)]="userid" style="width:250px" />
     </div>
     <div >
-        <label style="padding:20px">Select Time</label>
-        <input type="datetime-local" style="width:250px" />
+        <label style="padding:10px">Select Time</label>
+        <input style="padding:20px" type="datetime-local" style="width:250px" />
     </div>
     <div >
-        <label style="padding:20px">Room Name</label>
-        <select [(ngModel)]="roomname" type="datetime-local" style="width:250px" >
+        <label style="padding:10px">Room Name</label>
+        <select style="padding:20px" [(ngModel)]="roomname" type="datetime-local" style="width:250px" >
             <option>Physics</option>
             <option>Maths</option>
             <option>Computers</option>
@@ -24,7 +24,12 @@
         <button    (click)="createMeeting()"   >Create Meeting</button>
         <button    (click)="createMeeting()"   >Join Meeting</button>
         <br>
-       <b> <i>Please note that Only logged in users can create meeting.</i></b>
+        <hr>
+       <b> <i>Please note that Only logged in users can create meeting.</i></b><br>
+       <b> <i>Logged in User can join chat rooms based on authorisation</i></b><br>
+    
+       <b> <i>Recording of the session and chat history can be maintained</i></b><br>
+    
     
     </div>
     <div style="padding:10px">  
@@ -35,7 +40,7 @@
 </div>
  
 </td>
-<td>
+<td >
     <div class="bigbuttons5">
    
     

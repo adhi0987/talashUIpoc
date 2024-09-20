@@ -1,5 +1,6 @@
 .bigbuttons1 {
-    width: 2000;
+    width: 400px;
+    height:400px;
     /* Adding the rounded corners */
     border-radius: 25px;
 
@@ -62,8 +63,8 @@
 }
 
 .bigbuttons5 {
-    height: 400;
-    width: 200;
+    height: 400px;
+    width: 300px;
     /* Adding the rounded corners */
     border-radius: 25px;
 
