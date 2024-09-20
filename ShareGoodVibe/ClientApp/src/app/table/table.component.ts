@@ -46,14 +46,9 @@ export class TableComponent implements OnInit {
      
         this.columns = this.atService.getColumns();
         var data  = this.atService.getCharacters(this.searchword);
-        console.log("starting search");
         this.BookMarks = this.atService.getBookmakrs();
-       console.log("bookmarks %%%%%%%%%%"+JSON.stringify(this.BookMarks));
-
         this.characters2 = data;
-     console.log("Completed request.");
-       
-
+    
     
 
     }

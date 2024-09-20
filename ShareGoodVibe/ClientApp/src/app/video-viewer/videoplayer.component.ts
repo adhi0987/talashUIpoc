@@ -23,9 +23,7 @@ export class VideoplayerComponent {
         this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/c9F5kMUfFKk");
 
         this.items = this.atService.getVideodata(this.searchword);
-        console.log("call1");
-        console.log(this.items);
-        this.safeSrc2.push(this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/c9F5kMUfFKk"));
+       this.safeSrc2.push(this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/c9F5kMUfFKk"));
 
         // this.atService.getvideodata1(this.searchword)
         //     .subscribe((res: any) => {

@@ -26,8 +26,7 @@ export class TableRowComponent implements OnInit {
     toggle(str: string)
     {
         this.atService.Updateclicks(str);
-        console.log(str);
-        this.url = str;
+       this.url = str;
         //this.url1.emit(str);
         this.searchword.emit({ url: str, type: 'image' });
         

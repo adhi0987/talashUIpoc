@@ -39,16 +39,24 @@
     <div class="bigbuttons5">
    
     
-    <button disabled="true" (click)="JoinMeetingroom()" class="pushable"><span class="front">
+    <button disabled="true" (click)="JoinMeetingroom('physics')" class="pushable"><span class="front">
         Physics
-      </span></button> <hr>
-    <button disabled="true" (click)="JoinMeetingroom()" class="pushable" ><span class="front">
-        Maths 
-      </span></button><hr>
-    <button disabled="true" (click)="JoinMeetingroom()" class="pushable"><span class="front">
-        Computer class
       </span></button>
-      <button (click)="JoinMeetingroom()"  > <span >
+      <button (click)="JoinMeetingroom('physics')"  > <span >
+        Join
+      </span></button>
+      <hr>
+    <button disabled="true" (click)="JoinMeetingroom('maths')" class="pushable" ><span class="front">
+        Maths 
+      </span></button>
+      <button (click)="JoinMeetingroom('maths')"  > <span >
+        Join
+      </span></button>
+      <hr>
+    <button disabled="true" (click)="JoinMeetingroom('computers')" class="pushable"><span class="front">
+        Computer
+      </span></button>
+      <button (click)="JoinMeetingroom('computers')"  > <span >
         Join
       </span></button>
     </div>
@@ -56,5 +64,5 @@
 </tr>
 </table>
 <div *ngIf="showMeetingroom" >
-    <app-meetings></app-meetings>
+    <app-meetings  [roomname]="roomname"></app-meetings>
 </div>

@@ -31,36 +31,22 @@ export class ChatroomsComponent {
     }).subscribe((result: any) => {
       //let dat :meetingdata = JSON.parse(result.k);
 
-
       console.log("Chat room" + result.k);
       var k = JSON.parse((result.k));
 
-      //.log("chat room" + k);
-
-
-     // console.log("chatroom" + k[0].UserName);
-     // console.log("chat room " + k[0].rooms[0].MeetingRoomtitle);
-
-    //  console.log("chat room " + result.k[0].UserName);
-      //this.mathsApiKey = k[0].rooms[0].ApiKey;
-      //console.log("chat rooms " +dat.rooms);
       //console.log("chat room" + dat.UserName)
-
-
 
     });
 
   }
-  JoinMeetingroom()
-  {
-   // this.updateUrl();
-   console.log("Joinmeetingruom");
-     this.showMeetingroom = true;
-
-      
+  JoinMeetingroom(room: string) {
+    this.roomname = room;
+    // this.updateUrl();
+    console.log("Joinmeetingruom");
+    this.showMeetingroom = true;
   }
   updateUrl() {
-   // this._location.href = "http://localhost:4200/?" + "searchparm =" + this.mathsApiKey 
+    // this._location.href = "http://localhost:4200/?" + "searchparm =" + this.mathsApiKey 
   }
 }
 interface meetingdata {

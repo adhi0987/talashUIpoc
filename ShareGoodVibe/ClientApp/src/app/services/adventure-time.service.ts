@@ -72,8 +72,7 @@ export class AdventureTimeService {
                 result => {
                     this.BookMarks = <BookMarkData[]>result;
                     BookMarks.push(this.bookmarkdata[0]);
-                    console.log("BOOKMAKRS" + JSON.stringify(this.BookMarks))
-                }, error => console.error(error));
+                     }, error => console.error(error));
 
 
         return of(this.BookMarks);
@@ -85,7 +84,6 @@ export class AdventureTimeService {
     //delete content 
 
     Updateclicks(str: string) {
-        console.log("on bookmark " + str);
         var url = "/data/Updateclicks?input=" + str;
         this.http.get(url).subscribe
             (result => {
@@ -101,8 +99,7 @@ export class AdventureTimeService {
             (
                 result => {
                     this.data = result;
-                    console.log(this.data);
-                    this.data.forEach(function (element) {
+                   this.data.forEach(function (element) {
                         CHARACTERS1.push(element);
                     });
 
