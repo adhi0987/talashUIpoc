@@ -48,7 +48,7 @@
 <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Content Marketing
     TOOLS </a>
 <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">our Services</a>
-<a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FAQ</a>
+<a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">App Store</a>
 <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
 </div>
         <div>
@@ -165,7 +165,7 @@
                 <td>
                     <button (click)="ShowHidePanels('upload')" class="bigbuttons1">Upload Data</button>
                 </td>
-                <td> <button (click)="ShowHidePanels('faq')" class="bigbuttons1">FAQ</button>
+                <td> <button (click)="ShowHidePanels('faq')" class="bigbuttons1">App store</button>
                 </td>
                 <td>
                     <button (click)="ShowHidePanels('chatrooms')" class="bigbuttons1">Chat rooms</button>
@@ -196,7 +196,7 @@
            
   </div><div>
     <div *ngIf="showFAQ">
-                <app-meetings></app-meetings>
+                <app-appstore></app-appstore>
             </div>
             <div *ngIf="showChatrooms">
                 <app-chatrooms></app-chatrooms>

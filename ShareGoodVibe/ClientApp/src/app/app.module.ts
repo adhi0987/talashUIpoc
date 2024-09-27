@@ -25,6 +25,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MeetingsComponent } from './meetings/meetings.component'
 import { DyteComponentsModule } from '@dytesdk/angular-ui-kit';
 import { ChatroomsComponent} from './chatrooms/chatrooms.component'
+import { AppstoreComponent } from './appstore/appstore.component'
 
 
 
@@ -48,7 +49,8 @@ import { ChatroomsComponent} from './chatrooms/chatrooms.component'
         BlobuploadComponent,
         ProfileComponent,
         MeetingsComponent,
-        ChatroomsComponent
+        ChatroomsComponent,
+        AppstoreComponent
     
 
     ],
