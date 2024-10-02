@@ -26,6 +26,7 @@
     "@auth0/auth0-angular": "^2.2.3",
     "@dytesdk/angular-ui-kit": "^2.0.1",
     "@dytesdk/web-core": "^2.0.6",
+    "@hotjar/browser": "^1.0.9",
     "auth0-js": "^9.13.2",
     "axios": "^1.7.7",
     "bootstrap": "^5.2.3",
