@@ -183,6 +183,10 @@ details {
             font-size: 1.5em;
             box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
         }
+        tr:nth-of-type(even	) {
+            background-image: linear-gradient(white, white), linear-gradient(to right, lightblue,red);
+            }
+       
         
         
     
