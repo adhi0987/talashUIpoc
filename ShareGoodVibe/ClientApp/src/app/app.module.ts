@@ -26,7 +26,7 @@ import { MeetingsComponent } from './meetings/meetings.component'
 import { DyteComponentsModule } from '@dytesdk/angular-ui-kit';
 import { ChatroomsComponent} from './chatrooms/chatrooms.component'
 import { AppstoreComponent } from './appstore/appstore.component'
-
+import { ContentuploadComponent} from './contentupload/contentupload.component'
 
 
 @NgModule({
@@ -50,7 +50,8 @@ import { AppstoreComponent } from './appstore/appstore.component'
         ProfileComponent,
         MeetingsComponent,
         ChatroomsComponent,
-        AppstoreComponent
+        AppstoreComponent,
+        ContentuploadComponent
     
 
     ],

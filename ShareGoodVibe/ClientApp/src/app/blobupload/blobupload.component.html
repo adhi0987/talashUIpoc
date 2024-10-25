@@ -5,12 +5,28 @@
       Upload, Download and Delete  Files  
     </h4>  
   </div>  
-    
-  <div class="blobstorage-section">  
-    <input #file type="file"   size="50" width="48"  maxlength="50" multiple (change)="upload(file.files)"  />
+  <div class="blobstorage-section">
+    <input style="align-items: left;align-content: left;" type="checkbox"  [(ngModel)]="showAdvancedUpload" > Advanced Mode
+   <div *ngIf="showAdvancedUpload">
+    <app-contentupload></app-contentupload>
+  </div>
+  </div>
+  <div *ngIf="!showAdvancedUpload">
+ 
+  <div class="blobstorage-section"> 
+    <label>$1 Select application type before Uploading data: </label> 
+    <select [(ngModel)]="application" (click)="EnableUpload()">
+      <option>Video Search</option>
+      <option> Image Search</option>
+      <Option>Video based Exam</Option>
+    </select>
+    <hr>
+    <label>#2 Select File using upload button</label>
+    <input #file type="file" [disabled]="isDisabled" size="50" width="48"  maxlength="50" multiple (change)="upload(file.files)"  />
 
      <input style="display: none;" type="file" id="fileUpload" #selectedFile [(ngModel)]="fileUpload" (click)="selectedFile.value = ''" value="" (change)="handleFileInput($event)" />  
-     <input  [(ngModel)]="value" type="Text" (change)="FilterFiles($event)"/>
+     <hr>
+     <!-- <input  [(ngModel)]="value" type="Text" (change)="FilterFiles($event)"/> -->
      <table style="margin-top: 20px;">  
       <tr>  
         <th class="column1">Uploaded Files</th>  
@@ -37,4 +53,5 @@
 
       </tr>  
     </table>  
-  </div>  
+  </div>
+</div>  
