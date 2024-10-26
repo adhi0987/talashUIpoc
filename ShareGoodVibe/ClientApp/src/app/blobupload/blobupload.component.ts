@@ -147,8 +147,7 @@ export class BlobuploadComponent implements OnInit {
           if (this.application == 'Video Search') foldername = "talash-videosearch";
           if (this.application == 'Image Search') foldername = "talash-imagesearch";
 
-          if (this.application == 'Video based Exam') foldername = "dyte-videoxxmas";
-          
+          if (this.application == 'Video based Exam') foldername = "dyte-videoxxmas";         
 
 
           this.http.get(this.baseUrl + '/SetFileAttrib?filename=' + fname + "&userid=" + "Ananymous" + "&application=" + foldername)
