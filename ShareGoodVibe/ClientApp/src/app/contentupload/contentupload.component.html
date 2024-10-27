@@ -10,12 +10,12 @@
   <hr>
   <input  [ngModel]="newTopic" type="text" > <button (click)="CreateNewTopic()">create</button>
   <hr>
-  <select>
+  <select >
     <option>Video Search</option>
     <option> Image Search</option>
     <Option>Video based Exam</Option>
   </select>
-  <select>
+  <select [(ngModel)]="selectedTopic" (click)="topicSelected()" >
     <option>---Select interivew topic----</option>
     <option *ngFor="let item of topics" [value]="item">
       {{item}}
@@ -30,9 +30,11 @@
 <div class="panel">
   <label> Select File using upload button</label>
   <hr>
-  <input #file type="file" size="50" width="48" maxlength="50" multiple />
+  <input #file type="file"  size="50" width="48"  maxlength="50" multiple (change)="upload(file.files)"  />
+
+  <input style="display: none;" type="file" id="fileUpload" #selectedFile [(ngModel)]="fileUpload" (click)="selectedFile.value = ''" value="" (change)="handleFileInput($event)" />  
   <hr>
-  <input style="display: none;" type="file" id="fileUpload" #selectedFile (click)="selectedFile.value = ''" value="" />
+  <!-- <input style="display: none;" type="file" id="fileUpload" #selectedFile (click)="selectedFile.value = ''" value="" /> -->
 </div>
 
 <!-- Intive -->
@@ -41,7 +43,7 @@
 <div class="panel">
   <label>Select topic and Invite user</label>
 
-  <select>
+  <select [(ngModel)]="selectedTopic" (click)="topicSelected()" >
     <option>---Select interivew topic----</option>
     <option *ngFor="let item of topics" [value]="item">
       {{item}}
