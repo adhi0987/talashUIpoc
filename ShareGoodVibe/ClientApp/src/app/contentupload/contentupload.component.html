@@ -8,12 +8,12 @@
   <hr>
   <label>Create topic if new topic required </label>
   <hr>
-  <input  [ngModel]="newTopic" type="text" > <button (click)="CreateNewTopic()">create</button>
+  <input  [(ngModel)]="newTopic" type="text" > <button (click)="CreateNewTopic()">create</button>
   <hr>
-  <select >
+  <select [ngModel]="application">
     <option>Video Search</option>
     <option> Image Search</option>
-    <Option>Video based Exam</Option>
+    <Option>vide exams</Option>
   </select>
   <select [(ngModel)]="selectedTopic" (click)="topicSelected()" >
     <option>---Select interivew topic----</option>
@@ -35,6 +35,23 @@
   <input style="display: none;" type="file" id="fileUpload" #selectedFile [(ngModel)]="fileUpload" (click)="selectedFile.value = ''" value="" (change)="handleFileInput($event)" />  
   <hr>
   <!-- <input style="display: none;" type="file" id="fileUpload" #selectedFile (click)="selectedFile.value = ''" value="" /> -->
+  <table >  
+    <tr style=" border: 1px solid black;border-color:greenyellow">  
+      <th class="column1">Uploaded Files</th>  
+      <th class="column2" style="text-align:center;">Download</th>  
+      <th class="column2" style="text-align:center;">Delete</th>  
+      
+    </tr>  
+    <tr *ngFor="let publicfile of publicFiles">  
+      <td class="column1">{{publicfile}}</td>  
+      <td class="column2" style="text-align:center;cursor: pointer;"><i class="fa fa-download"></i></td>  
+      <td class="column3" style="text-align:center;" (click)="deleteFile(publicfile)">  
+        <img alt="Group Audit" src="../assets/icon-download.png" />  
+      </td>  
+    
+    </tr>  
+  </table>  
+
 </div>
 
 <!-- Intive -->

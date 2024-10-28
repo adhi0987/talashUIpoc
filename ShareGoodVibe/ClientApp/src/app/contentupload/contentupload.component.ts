@@ -14,6 +14,7 @@ export class ContentuploadComponent {
   private baseUrlBlobApi = 'https://talashfileuploadapi-ctapfke2bwcwdghx.australiasoutheast-01.azurewebsites.net/api/blobstorage';
   private baseUrlVideoApi = "https://talashvideo.azurewebsites.net/dyte/v2";
 
+  publicFiles: string[] = [];
   topicSlected: string = "";
   files: string[] = [];
   fileToUpload: FormData | undefined;
@@ -38,7 +39,7 @@ export class ContentuploadComponent {
         }
 
       });
-
+   
   }
 
   CreateNewTopic() {
@@ -47,7 +48,25 @@ export class ContentuploadComponent {
   }
 
   topicSelected() {
+    
+    this.showFiles();
 
+  }
+  showFiles()
+  {
+    this.http.get<string[]>(this.baseUrl + '/ListFilesByApplicationv2?userid=' + "dasaradh" +"&applicaiton="+ "videoexams" +"&topic="+this.selectedTopic).subscribe(result => {
+      this.publicFiles = result;
+    }, error => console.error(error));
+
+  }
+  deleteFile(fileName: string) {
+    var del = confirm('Are you sure want to delete this file');
+    if (!del) return;
+    this.http.get(this.baseUrl + '/deletefile/' + fileName).subscribe(result => {
+      if (result != null) {
+        this.showFiles();
+      }
+    }, error => console.error(error));
   }
   upload(files: any) {
     if (files.length === 0)
