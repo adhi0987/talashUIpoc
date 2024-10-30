@@ -11,6 +11,7 @@ import { resourceLimits } from 'worker_threads';
 export class ContentuploadComponent {
   topics: string[] = [];
   newTopic: string = "";
+  deleteTopic:string ="";
   private baseUrlBlobApi = 'https://talashfileuploadapi-ctapfke2bwcwdghx.australiasoutheast-01.azurewebsites.net/api/blobstorage';
   private baseUrlVideoApi = "https://talashvideo.azurewebsites.net/dyte/v2";
 
@@ -29,27 +30,47 @@ export class ContentuploadComponent {
   constructor(private http: HttpClient) {
     //https://localhost:7142/dyte/v2/GetlistOfTopics?userid=test
 
+    this.refreshListOfTopics();  
+  }
+  refreshListOfTopics()
+  {
     this.http.post(this.baseUrlVideoApi + '/GetlistOfTopics?userid=test', null)
       .subscribe((response: any) => {
 
         var json = JSON.parse(JSON.stringify(response));
-
+         this.topics = [];
         for (var i = 0; i < json.length; i++) {
           this.topics.push(json[i]);
         }
 
       });
    
+
   }
 
   CreateNewTopic() {
-    console.log("new topic value: " + this.newTopic);
+    this.http.post(this.baseUrlVideoApi + '/CreateInterviewTopic?topic='+this.newTopic , null)
+    .subscribe((response: any) => {
+
+    console.log("new topic created: " + this.newTopic);
+    });
+    this.refreshListOfTopics(); 
+  }
+
+  DeleteTopic() {
+    this.http.post(this.baseUrlVideoApi + '/DeleteTopic?userid=dasaradh&topic='+this.deleteTopic , null)
+    .subscribe((response: any) => {
+
+    console.log("Deleted topic : " + this.deleteTopic);
+    });
+    this.refreshListOfTopics(); 
 
   }
 
   topicSelected() {
     
     this.showFiles();
+    this.refreshListOfTopics(); 
 
   }
   showFiles()

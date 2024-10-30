@@ -9,6 +9,8 @@
   <label>Create topic if new topic required </label>
   <hr>
   <input  [(ngModel)]="newTopic" type="text" > <button (click)="CreateNewTopic()">create</button>
+  <input  [(ngModel)]="deleteTopic" type="text" > <button (click)="DeleteTopic()">Delete</button>
+  
   <hr>
   <select [ngModel]="application">
     <option>Video Search</option>
