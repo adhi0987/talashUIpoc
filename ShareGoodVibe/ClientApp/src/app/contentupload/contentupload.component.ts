@@ -83,7 +83,8 @@ export class ContentuploadComponent {
   deleteFile(fileName: string) {
     var del = confirm('Are you sure want to delete this file');
     if (!del) return;
-    this.http.get(this.baseUrl + '/deletefile/' + fileName).subscribe(result => {
+    let filedetails = fileName.slice(fileName.lastIndexOf('/') + 1);
+    this.http.get(this.baseUrl + '/deletefilev2/' + filedetails +'/'+"video exam"+'/' +this.selectedTopic).subscribe(result => {
       if (result != null) {
         this.showFiles();
       }
@@ -114,6 +115,13 @@ export class ContentuploadComponent {
           this.http.get(this.baseUrl + '/SetFileAttribV2?filename=' + fname + "&userid=" + "Ananymous" + "&topic=" + this.selectedTopic)
             .subscribe((response: any) => {
               console.log("uploaded file to directory" + foldername)
+
+            });
+            let questionurl = "https://talashlogs.blob.core.windows.net/dyte-videoxxmas/"+ this.selectedTopic +"/" +fname;
+            this.http.post(this.baseUrlVideoApi + '/UpdateCatelog?userid=' + fname + "&password=" + "Ananymous" +
+                 "&topic=" + this.selectedTopic +"&question=" + questionurl, null)
+            .subscribe((response: any) => {
+              console.log("uploaded catelog")
 
             });
 
