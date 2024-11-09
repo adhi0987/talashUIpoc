@@ -9,4 +9,6 @@ ul{
     max-width: 400px;
     max-height: 350px;
     height: auto;
+    min-width: 40px;
+    min-height:40px;
   }
