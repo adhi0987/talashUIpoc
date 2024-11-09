@@ -88,6 +88,11 @@ export class ContentuploadComponent {
       if (result != null) {
         this.showFiles();
       }
+      this.http.post(this.baseUrlVideoApi + '/DeleteQuestionFromTopic?topic=' +this.selectedTopic + '&filenae=' +filedetails,null) 
+      .subscribe(result=>{
+        console.log("catelogUpdate: Question Deleted");
+      });
+      
     }, error => console.error(error));
   }
   upload(files: any) {
