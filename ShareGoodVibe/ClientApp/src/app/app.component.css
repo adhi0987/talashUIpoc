@@ -188,5 +188,12 @@ details {
             }
        
         
-        
+        .responsive {
+    width: 100%;
+    max-width: 400px;
+    max-height: 350px;
+    height: auto;
+    min-width: 130px;
+    min-height:100px;
+  }
     
