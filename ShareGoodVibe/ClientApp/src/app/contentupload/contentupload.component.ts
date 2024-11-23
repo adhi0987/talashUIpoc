@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
+import { AuthService } from '../services/auth.service';
 import { resourceLimits } from 'worker_threads';
 
 @Component({
@@ -14,6 +14,8 @@ export class ContentuploadComponent {
   deleteTopic:string ="";
   private baseUrlBlobApi = 'https://talashfileuploadapi-ctapfke2bwcwdghx.australiasoutheast-01.azurewebsites.net/api/blobstorage';
   private baseUrlVideoApi = "https://talashvideo.azurewebsites.net/dyte/v2";
+  private baseUrlVideoApi2 = "https://talashvideo.azurewebsites.net/ueercategory/v2";
+
 
   publicFiles: string[] = [];
   topicSlected: string = "";
@@ -23,14 +25,25 @@ export class ContentuploadComponent {
   fileUpoadInitiated: boolean = false;
   fileDownloadInitiated: boolean = false;
   profile: any;
+  userid: string="Ananymous";
   private baseUrl = 'https://talashfileuploadapi-ctapfke2bwcwdghx.australiasoutheast-01.azurewebsites.net/api/blobstorage';
   public application: string = "";
   public selectedTopic: string = "";
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,public auth: AuthService) {
     //https://localhost:7142/dyte/v2/GetlistOfTopics?userid=test
 
     this.refreshListOfTopics();  
+    
+    if (this.auth.isAuthenticated()) {
+      this.auth.getProfile((err: any, profile: any) => {
+        this.profile = profile;
+        if (profile)
+          this.userid = profile.name;
+        //userid="dasradh";
+        console.log("Userid" + this.userid);
+      });
+    }
   }
   refreshListOfTopics()
   {
@@ -88,11 +101,19 @@ export class ContentuploadComponent {
       if (result != null) {
         this.showFiles();
       }
+      if(this.userid == null || this.userid =="Ananymous")
+      {
       this.http.post(this.baseUrlVideoApi + '/DeleteQuestionFromTopic?topic=' +this.selectedTopic + '&filenae=' +filedetails,null) 
       .subscribe(result=>{
         console.log("catelogUpdate: Question Deleted");
       });
-      
+    }
+    else{
+      this.http.post(this.baseUrlVideoApi2 + '/DeleteQuestionFromTopic?topic=' +this.selectedTopic +"&userid="+this.userid + '&filenae=' +filedetails,null) 
+      .subscribe(result=>{
+        console.log("catelogUpdate: Question Deleted");
+      });
+    }      
     }, error => console.error(error));
   }
   upload(files: any) {
@@ -123,12 +144,31 @@ export class ContentuploadComponent {
 
             });
             let questionurl = "https://talashlogs.blob.core.windows.net/dyte-videoxxmas/"+ this.selectedTopic +"/" +fname;
-            this.http.post(this.baseUrlVideoApi + '/UpdateCatelog?userid=' + fname + "&password=" + "Ananymous" +
+         
+            console.log("Userid ****** " + this.userid );
+
+            if(this.userid == null || this.userid =="Ananymous")
+            {
+            this.http.post(this.baseUrlVideoApi + '/UpdateCatelog?userid=' + "Ananymous" + "&password=" + "Ananymous" +
                  "&topic=" + this.selectedTopic +"&question=" + questionurl, null)
             .subscribe((response: any) => {
               console.log("uploaded catelog")
+           
 
             });
+          }
+          else
+          {
+         
+            this.http.post(this.baseUrlVideoApi2 + '/UpdateCatelog?userid=' + this.userid + "&password=" + this.userid +
+              "&topic=" + this.selectedTopic +"&question=" + questionurl, null)
+         .subscribe((response: any) => {
+           console.log("uploaded catelog")
+        
+
+         });
+      
+          }
 
         }
         else {
