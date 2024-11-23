@@ -2,21 +2,34 @@
 <a  target=”_blank” href="https://talashlogs.blob.core.windows.net/dyte-videoxxmas/How to upload video files .pdf"> 
   <img height="80" wdith="80" src="https://img.freepik.com/premium-vector/pdf-file-icon-vector-illustration_875240-750.jpg"/>Help File </a>
 </div>
-<button class="accordion">Step1: Select topic</button>
-<div class="panel">
+<button class="wrapper">Step1: Select topic</button>
+<ul>
+<li class="panel">
+  <hr>
+    
+     <label>Create Topic</label> <input  [(ngModel)]="newTopic" type="text" > <button (click)="CreateNewTopic()">create</button>
+     <br>
+     <hr>
+     
+      <label>Delete topic</label><input  [(ngModel)]="deleteTopic" type="text" > <button (click)="DeleteTopic()">Delete</button>
+     
+
+  <hr>
+</li>
+
+<!-- upload -->
+
+<button class="wrapper">Step 2: Upload</button>
+<li class="panel">
   <label> Select application type and topic before Uploading data: </label> <br>
-  <hr>
-  <label>Create topic if new topic required </label>
-  <hr>
-  <input  [(ngModel)]="newTopic" type="text" > <button (click)="CreateNewTopic()">create</button>
-  <input  [(ngModel)]="deleteTopic" type="text" > <button (click)="DeleteTopic()">Delete</button>
-  
-  <hr>
+  <br>
+  <label>application type</label>
   <select [ngModel]="application">
     <option>Video Search</option>
     <option> Image Search</option>
     <Option>vide exams</Option>
   </select>
+  <label>topic</label>
   <select [(ngModel)]="selectedTopic" (click)="topicSelected()" >
     <option>---Select interivew topic----</option>
     <option *ngFor="let item of topics" [value]="item">
@@ -24,12 +37,7 @@
     </option>  
   </select>
   <hr>
-</div>
 
-<!-- upload -->
-
-<button class="accordion">Step 2: Upload</button>
-<div class="panel">
   <label> Select File using upload button</label>
   <hr>
   <input #file type="file"  size="50" width="48"  maxlength="50" multiple (change)="upload(file.files)"  />
@@ -54,12 +62,12 @@
     </tr>  
   </table>  
 
-</div>
+</li>
 
 <!-- Intive -->
 
-<button class="accordion">Step3: Send invitation to user</button>
-<div class="panel">
+<button class="wrapper">Step3: Send invitation to user</button>
+<li class="panel">
   <label>Select topic and Invite user</label>
 
   <select [(ngModel)]="selectedTopic" (click)="topicSelected()" >
@@ -72,4 +80,6 @@
 
   Enter Email for Candidate<input type="text">
   <button>Send Invitation</button>
-</div>
+  
+</li>
+</ul>
