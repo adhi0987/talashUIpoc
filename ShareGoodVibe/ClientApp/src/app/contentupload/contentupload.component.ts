@@ -45,9 +45,24 @@ export class ContentuploadComponent {
       });
     }
   }
+  getuserName()
+  {
+    if (this.auth.isAuthenticated()) {
+      this.auth.getProfile((err: any, profile: any) => {
+        this.profile = profile;
+        if (profile)
+          this.userid = profile.name;
+        //userid="dasradh";
+        console.log("Userid" + this.userid);
+      });
+    }
+
+  }
   refreshListOfTopics()
   {
-    this.http.post(this.baseUrlVideoApi + '/GetlistOfTopics?userid=test', null)
+    this.getuserName();
+
+    this.http.post(this.baseUrlVideoApi + '/GetlistOfTopics?userid='+this.userid, null)
       .subscribe((response: any) => {
 
         var json = JSON.parse(JSON.stringify(response));
@@ -62,7 +77,8 @@ export class ContentuploadComponent {
   }
 
   CreateNewTopic() {
-    this.http.post(this.baseUrlVideoApi + '/CreateInterviewTopic?topic='+this.newTopic , null)
+    this.getuserName()
+    this.http.post(this.baseUrlVideoApi + '/CreateInterviewTopic?topic='+this.newTopic +"&userid="+this.userid , null)
     .subscribe((response: any) => {
 
     console.log("new topic created: " + this.newTopic);
@@ -71,7 +87,8 @@ export class ContentuploadComponent {
   }
 
   DeleteTopic() {
-    this.http.post(this.baseUrlVideoApi + '/DeleteTopic?userid=dasaradh&topic='+this.deleteTopic , null)
+    this.getuserName()
+    this.http.post(this.baseUrlVideoApi + '/DeleteTopic?userid=dasaradh&topic='+this.deleteTopic +"&userid"+this.userid , null)
     .subscribe((response: any) => {
 
     console.log("Deleted topic : " + this.deleteTopic);
@@ -81,19 +98,21 @@ export class ContentuploadComponent {
   }
 
   topicSelected() {
-    
+    this.getuserName()
     this.showFiles();
     this.refreshListOfTopics(); 
 
   }
   showFiles()
   {
+    this.getuserName()
     this.http.get<string[]>(this.baseUrl + '/ListFilesByApplicationv2?userid=' + "dasaradh" +"&applicaiton="+ "videoexams" +"&topic="+this.selectedTopic).subscribe(result => {
       this.publicFiles = result;
     }, error => console.error(error));
 
   }
   deleteFile(fileName: string) {
+    this.getuserName()
     var del = confirm('Are you sure want to delete this file');
     if (!del) return;
     let filedetails = fileName.slice(fileName.lastIndexOf('/') + 1);
@@ -117,6 +136,7 @@ export class ContentuploadComponent {
     }, error => console.error(error));
   }
   upload(files: any) {
+    this.getuserName()
     if (files.length === 0)
       return;
 
@@ -189,6 +209,7 @@ export class ContentuploadComponent {
   }
 
   onUploadFiles() {
+    this.getuserName()
     if (this.fileUpoadInitiated) {
       return;
     }
