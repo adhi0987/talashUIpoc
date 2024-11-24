@@ -33,7 +33,6 @@ export class ContentuploadComponent {
   constructor(private http: HttpClient,public auth: AuthService) {
     //https://localhost:7142/dyte/v2/GetlistOfTopics?userid=test
 
-    this.refreshListOfTopics();  
     
     if (this.auth.isAuthenticated()) {
       this.auth.getProfile((err: any, profile: any) => {
@@ -42,8 +41,11 @@ export class ContentuploadComponent {
           this.userid = profile.name;
         //userid="dasradh";
         console.log("Userid" + this.userid);
+        this.refreshListOfTopics();
       });
     }
+      
+    
   }
   getuserName()
   {
