@@ -30,7 +30,7 @@
     <Option>vide exams</Option>
   </select>
   <label>topic</label>
-  <select [(ngModel)]="selectedTopic" (ngModelChange)="topicSelected()" >
+  <select [(ngModel)]="selectedTopic" (change)="topicSelected()" >
     <option>---Select interivew topic----</option>
     <option *ngFor="let item of topics" [value]="item">
       {{item}}
