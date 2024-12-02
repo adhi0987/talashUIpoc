@@ -47,6 +47,11 @@ export class ContentuploadComponent {
       
     
   }
+  ngInit()
+  {
+      getuserName();
+      refreshListOfTopics();
+  }
   getuserName()
   {
     if (this.auth.isAuthenticated()) {
