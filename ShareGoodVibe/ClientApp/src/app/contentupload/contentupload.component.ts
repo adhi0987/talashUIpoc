@@ -49,8 +49,8 @@ export class ContentuploadComponent {
   }
   ngInit()
   {
-      getuserName();
-      refreshListOfTopics();
+      this.getuserName();
+      this.refreshListOfTopics();
   }
   getuserName()
   {
