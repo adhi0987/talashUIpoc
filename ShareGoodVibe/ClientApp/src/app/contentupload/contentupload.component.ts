@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { resourceLimits } from 'worker_threads';
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser'
+
 
 @Component({
   selector: 'app-contentupload',
@@ -29,6 +31,7 @@ export class ContentuploadComponent {
   private baseUrl = 'https://talashfileuploadapi-ctapfke2bwcwdghx.australiasoutheast-01.azurewebsites.net/api/blobstorage';
   public application: string = "";
   public selectedTopic: string = "";
+  public ToEmailAddress: string= "" ;
 
   constructor(private http: HttpClient,public auth: AuthService) {
     //https://localhost:7142/dyte/v2/GetlistOfTopics?userid=test
@@ -46,11 +49,6 @@ export class ContentuploadComponent {
     }
       
     
-  }
-  ngInit()
-  {
-      this.getuserName();
-      this.refreshListOfTopics();
   }
   getuserName()
   {
@@ -103,7 +101,42 @@ export class ContentuploadComponent {
     this.refreshListOfTopics(); 
 
   }
+  public sendEmail(e: Event) {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        'service_9pbybee',
+        'template_jvio0hx',
+        e.target as HTMLFormElement,
+        'eE6TlxLSd36jnzO8P'
+      )
+      .then(
+        (result: EmailJSResponseStatus) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
+  SendInvite(){
+    let params = "{ \"emaili_d\": " + this.ToEmailAddress+ "}";
+    emailjs
+      .sendForm('service_9pbybee', 'template_jvio0hx', params, {
+        publicKey: 'eE6TlxLSd36jnzO8P',
+      })
+      .then(
+        () => {
+          console.log(' &&&&&&&&&&&&&&&&&&&&&&&&   SUCCESS!');
 
+        },
+        (error) => {
+          console.log('&&&&&&&&&&&&&&&&&&&&&  FAILED...', (error as EmailJSResponseStatus).text);
+        },
+      );
+
+  }
+  
   topicSelected() {
     this.getuserName()
     this.showFiles();
