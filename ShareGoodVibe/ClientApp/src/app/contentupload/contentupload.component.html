@@ -30,7 +30,7 @@
     <Option>vide exams</Option>
   </select>
   <label>topic</label>
-  <select [(ngModel)]="selectedTopic" (change)="topicSelected()" >
+  <select [(ngModel)]="selectedTopic" (ngModelChange)="topicSelected()" >
     <option>---Select interivew topic----</option>
     <option *ngFor="let item of topics" [value]="item">
       {{item}}
@@ -78,8 +78,13 @@
   </select>
   <hr>
 
-  Enter Email for Candidate<input type="text">
-  <button>Send Invitation</button>
   
+  <form class="contact-form" (submit)="sendEmail($event)">
+  
+    <label>Email to Send Invitation</label>
+    <input type="email" name="email_id" />
+    
+    <input type="submit" value="Send" />
+  </form>
 </li>
 </ul>
