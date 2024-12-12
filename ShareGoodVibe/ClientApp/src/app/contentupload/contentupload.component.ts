@@ -20,6 +20,7 @@ export class ContentuploadComponent {
 
 
   publicFiles: string[] = [];
+  answerFiles: string[] = [];
   topicSlected: string = "";
   files: string[] = [];
   fileToUpload: FormData | undefined;
@@ -149,6 +150,12 @@ export class ContentuploadComponent {
     this.http.get<string[]>(this.baseUrl + '/ListFilesByApplicationv2?userid=' + "dasaradh" +"&applicaiton="+ "videoexams" +"&topic="+this.selectedTopic).subscribe(result => {
       this.publicFiles = result;
     }, error => console.error(error));
+
+    // get reording files.
+    this.http.post<string[]>(this.baseUrlVideoApi2 + '/GetVideoReplyList' ,{"userid":"dasaradh","topic":"HowAreYou"}).subscribe(result => {
+      this.answerFiles = result;
+    }, error => console.error(error));
+
 
   }
   deleteFile(fileName: string) {

@@ -60,6 +60,22 @@
       </td>  
     
     </tr>  
+  </table> 
+  <table >  
+    <tr style=" border: 1px solid black;border-color:greenyellow">  
+      <th class="column1">Uploaded Files</th>  
+      <th class="column2" style="text-align:center;">Download</th>  
+      <th class="column2" style="text-align:center;">Delete</th>  
+      
+    </tr>  
+    <tr *ngFor="let publicfile of answerFiles">  
+      <td class="column1">{{publicfile}}</td>  
+      <td class="column2" style="text-align:center;cursor: pointer;"><i class="fa fa-download"></i></td>  
+      <td class="column3" style="text-align:center;" (click)="deleteFile(publicfile)">  
+        <img alt="Group Audit" src="../assets/icon-download.png" />  
+      </td>  
+    
+    </tr>  
   </table>  
 
 </li>
