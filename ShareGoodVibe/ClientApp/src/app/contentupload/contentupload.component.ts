@@ -152,7 +152,7 @@ export class ContentuploadComponent {
     }, error => console.error(error));
 
     // get reording files.
-    this.http.post<string[]>(this.baseUrlVideoApi2 + '/GetVideoReplyList' ,{"userid":"dasaradh","topic":"HowAreYou"}).subscribe(result => {
+    this.http.post<string[]>(this.baseUrlVideoApi2 + '/GetAnswerFiles?topic=HowAreYou' ,null).subscribe(result => {
       this.answerFiles = result;
     }, error => console.error(error));
 
