@@ -49,3 +49,10 @@ li {
     content: "-";
   }
 }
+/* Optional styling */
+summary::-webkit-details-marker {
+  color: blue;
+}
+summary:focus {
+  outline-style: none;
+}
