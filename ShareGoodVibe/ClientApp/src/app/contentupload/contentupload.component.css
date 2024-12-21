@@ -78,14 +78,14 @@ input {
 }
 button{
   display:block;
-  padding:8px;
+  padding:6px;
   font-weight: bold ;
-  font-size: 18px;
+  font-size: 16px;
   color: black;
   text-align: center;
   cursor: pointer;
   margin-top:15px;
-  width: 150px;
+  width: 130px;
   
   
 }
