@@ -152,7 +152,8 @@ export class ContentuploadComponent {
     }, error => console.error(error));
 
     // get reording files.
-    this.http.post<string[]>(this.baseUrlVideoApi2 + '/GetAnswerFiles?topic=HowAreYou' ,null).subscribe(result => {
+    this.answerFiles = [];
+    this.http.post<string[]>(this.baseUrlVideoApi2 + '/GetAnswerFiles?topic=' + this.selectedTopic,null).subscribe(result => {
       this.answerFiles = result;
     }, error => console.error(error));
 
