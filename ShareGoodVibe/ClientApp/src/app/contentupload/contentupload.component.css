@@ -96,7 +96,7 @@ table {
   background: #012B39;
   border-radius: 0.25em;
   border-collapse: collapse;
-  margin: 1em;
+  margin-top: 1em;
 }
 th {
   border-bottom: 1px solid #364043;
@@ -108,7 +108,7 @@ th {
 }
 td {
   color: #fff;
-  max-width: 170px;
+  max-width: 160px;
   font-weight: 400;
   padding: 0.55em 1em;
 }
