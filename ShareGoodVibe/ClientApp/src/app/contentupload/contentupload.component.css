@@ -1,12 +1,13 @@
 body {
   background:#efefef;
-  padding: 20px;
+  padding: 5px;
+  font-size:14px;
 }
 
 .wrapper {
-  padding:20px;
+  padding:5px;
   width:100%;
-  max-width: 768px;
+  max-width: 868px;
   margin: 0 auto;
   background:#d6ecf1;
 }
@@ -29,11 +30,12 @@ li {
     display:block;
   }
   > div {
-    background: skyblue;
+    background: gray;
     border-top: 1px solid #333;
     margin: 5px -10px -10px;
-    padding: 10px;
+    
     display:none;
+    color:black
   }
   > a {
     text-decoration: none;
@@ -55,4 +57,67 @@ summary::-webkit-details-marker {
 }
 summary:focus {
   outline-style: none;
+}
+select {
+background-color:lightgray;
+width:100%;
+padding:5px;
+border-radius: 4x;
+
+}
+input:focus{
+  background-color: khaki;
+}
+input {
+  background-color: lightgray  ;
+  color:black;
+  width: 100%;
+  padding: 5px;
+  border-radius: 1x  ;
+  box-sizing: border-box;
+}
+button{
+  display:block;
+  padding:8px;
+  font-weight: bold ;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  margin-top:15px;
+  width: 150px;
+  
+  
+}
+label {
+  font-size: 16px;
+}
+table {
+  background: #012B39;
+  border-radius: 0.25em;
+  border-collapse: collapse;
+  margin: 1em;
+}
+th {
+  border-bottom: 1px solid #364043;
+  color: #E2B842;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+td {
+  color: #fff;
+  max-width: 170px;
+  font-weight: 400;
+  padding: 0.55em 1em;
+}
+.disabled td {
+  color: #4F5F64;
+}
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: #014055;
 }

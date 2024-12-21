@@ -9,14 +9,14 @@
 <li class="panel">
   <hr>
     
-     <label>Create Topic</label> <input  [(ngModel)]="newTopic" type="text" > <button (click)="CreateNewTopic()">create</button>
-     <br>
+     <label>Create Topic</label> <input  [(ngModel)]="newTopic" type="text" > <button class="btn btn-primary"(click)="CreateNewTopic()">Create</button>
+     
      <hr>
      
-      <label>Delete topic</label><input  [(ngModel)]="deleteTopic" type="text" > <button (click)="DeleteTopic()">Delete</button>
+      <label>Delete topic</label><input  [(ngModel)]="deleteTopic" type="text" > <button class="btn btn-primary" (click)="DeleteTopic()">Delete</button>
      
 
-  <hr>
+  
 </li>
 </details>
 
@@ -51,7 +51,7 @@
   <hr>
   <!-- <input style="display: none;" type="file" id="fileUpload" #selectedFile (click)="selectedFile.value = ''" value="" /> -->
   <table >  
-    <tr style=" border: 3px solid black;border-color:orange">  
+    <tr >  
       <th  style="width:400px" class="column1">Uploaded Files</th>  
       <th class="column2" style="text-align:center;">Download</th>  
       <th class="column2" style="text-align:center;">Delete</th>  
@@ -67,8 +67,8 @@
     </tr>  
   </table> 
   <table >  
-    <tr  style=" border: 3px solid black;border-color:orange">  
-      <th style="width:400px" class="column1">Video Recording for Above Topic </th> 
+    <tr  >  
+      <th style="width:150px" class="column1">Video Recording </th> 
       <th class="column2" style="text-align:center;">User</th>  
 
       <th class="column2" style="text-align:center;">Topic</th>  
@@ -114,8 +114,8 @@
   
     <label>Email to Send Invitation</label>
     <input type="email" name="email_id" />
-    
-    <input type="submit" value="Send" />
+    <br><hr>
+    <input class="btn btn-primary" type="submit" value="Send" />
   </form>
 </li>
 </details>
