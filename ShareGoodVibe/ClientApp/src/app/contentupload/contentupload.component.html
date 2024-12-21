@@ -68,15 +68,23 @@
   </table> 
   <table >  
     <tr  style=" border: 3px solid black;border-color:orange">  
-      <th style="width:400px" class="column1">Video Recording for Above Topic </th>  
+      <th style="width:400px" class="column1">Video Recording for Above Topic </th> 
+      <th class="column2" style="text-align:center;">User</th>  
+
+      <th class="column2" style="text-align:center;">Topic</th>  
+
+
       <th class="column2" style="text-align:center;">Download</th>  
       <th class="column2" style="text-align:center;">Delete</th>  
       
     </tr>  
     <tr *ngFor="let publicfile of answerFiles">  
-      <td class="column1">{{publicfile}}</td>  
+      <td class="column1">{{publicfile.file}}</td>  
+      <td class="column1">{{publicfile.userid}}</td>  
+      <td class="column1">{{publicfile.topic}}</td>  
       <td class="column2" style="text-align:center;cursor: pointer;"><i class="fa fa-download"></i></td>  
-      <td class="column3" style="text-align:center;" (click)="deleteFile(publicfile)">  
+      <!-- <td class="column3" style="text-align:center;" (click)="deleteFile(publicfile)">   -->
+        <td>
         <img alt="Group Audit" src="../assets/icon-download.png" />  
       </td>  
     

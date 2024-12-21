@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { resourceLimits } from 'worker_threads';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser'
+import { Interface } from 'readline';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class ContentuploadComponent {
 
 
   publicFiles: string[] = [];
-  answerFiles: string[] = [];
+  answerFiles: MeetingData[] = [];
   topicSlected: string = "";
   files: string[] = [];
   fileToUpload: FormData | undefined;
@@ -153,7 +154,7 @@ export class ContentuploadComponent {
 
     // get reording files.
     this.answerFiles = [];
-    this.http.post<string[]>(this.baseUrlVideoApi2 + '/GetAnswerFiles?topic=' + this.selectedTopic,null).subscribe(result => {
+    this.http.post<MeetingData[]>(this.baseUrlVideoApi2 + '/GetAnswerFiles?topic=' + this.selectedTopic,null).subscribe(result => {
       this.answerFiles = result;
     }, error => console.error(error));
 
@@ -287,3 +288,9 @@ export class ContentuploadComponent {
   }
 
 } 
+interface MeetingData{
+  userid: string;
+  file:string;
+  topic:string;
+
+}
