@@ -101,17 +101,17 @@
 <li class="panel">
   <label>Select topic and Invite user</label>
 
-  <select [(ngModel)]="selectedTopic" (click)="topicSelected()" >
-    <option>---Select interivew topic----</option>
-    <option *ngFor="let item of topics" [value]="item">
-      {{item}}
-    </option>    
-  </select>
-  <hr>
+ 
 
   
   <form class="contact-form" (submit)="sendEmail($event)">
-  
+    <select name="topic" [(ngModel)]="selectedTopic" (click)="topicSelected()" >
+      <option>---Select interivew topic----</option>
+      <option *ngFor="let item of topics" [value]="item">
+        {{item}}
+      </option>    
+    </select>
+    <hr>
     <label>Email to Send Invitation</label>
     <input type="email" name="email_id" />
     <br><hr>
