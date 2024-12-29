@@ -1,9 +1,13 @@
-﻿<html lang="en">
+<html lang="en">
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <script src="https://kit.fontawesome.com/7d2b65abd1.js" crossorigin="anonymous"></script>
 <style>
     body,
@@ -12,15 +16,16 @@
     h3,
     h4,
     h5 {
-        font-family: Calibri;  
-    box-shadow: 0 1px 4px 0 #9b9b9b;  
-    background-color: #fbf0d7;  
-      font-size: calc(60% + 0.8vmin);
-
+        font-family: Calibri;
+        box-shadow: 0 1px 4px 0 #9b9b9b;
+        background-color: #FFF5E1;
+        font-size: calc(60% + 0.8vmin);
+        overflow-x: hidden;
     }
 
-    body {
-        font-size: 16px;
+    a {
+        text-decoration: none;
+        color: white;
     }
 
     .w3-half img {
@@ -29,10 +34,6 @@
         opacity: 0.8;
         cursor: pointer
     }
-
-    .w3-half img:hover {
-        /*opacity: 1
-        }*/
 </style>
 
 <body>
@@ -41,14 +42,14 @@
     <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
         style="z-index:3;width:310px;font-weight:bold;" id="mySidebar">
         <br>
-       <div>
-            <img width=280px height=150px src="https://24.media.tumblr.com/6c146c7c737efc39bf4da7cc76b1ba5e/tumblr_n4tvp6P9zi1qza1qzo1_500.gif" />
+        <div>
+            <img width=280px height=150px
+                src="https://24.media.tumblr.com/6c146c7c737efc39bf4da7cc76b1ba5e/tumblr_n4tvp6P9zi1qza1qzo1_500.gif" />
         </div>
         <div class="w3-bar-block">
-
-<a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Content Marketing
-    TOOLS </a>
-</div>
+            <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Content Marketing
+                TOOLS </a>
+        </div>
         <div>
             <p>Search Content</p>
         </div>
@@ -56,46 +57,28 @@
             <app-events (searchword)="childEventClicked($event)"></app-events>
 
         </div>
-       
+
         <div>
             <app-fileupload></app-fileupload>
         </div>
         <p>
-            Check your favourites
+            Check Your Favourites
         </p>
         <button (click)="openModal1()">My favourites</button>
 
         <div class="w3-half">
-
-
         </div>
-
-      
-
         <div class="w3-container">
-            <div>
-
-
-            </div>
-            <h4 class="w3-padding-64">
-                <b>
-
-
-                </b>
-            </h4>
             <a>
-                <span class='glyphicon glyphicon-log-in'></span><img src="coollogo_com-19047462.png" /> Log In
-            </a><br />
-            <a [routerLink]='["/profile"]'>
-                <span class='glyphicon glyphicon-user'></span>
-            </a><br />
-            <a>
-                <span class='glyphicon glyphicon-log-out'></span> Log Out
+                <span class='lo'></span>Log In
             </a>
-
+            <a [routerLink]='["/profile"]'>
+                <span class='lo'></span>
+            </a>
+            <a>
+                <span class='lo'></span> Log Out
+            </a>
             <app-modal #modal></app-modal>
-
-
         </div>
 
     </nav>
@@ -107,110 +90,100 @@
 
     </header>
 
-    <img height="140px" width="1600px" src="./../assets/logo.png" />
+    <img src="../assets/logo.PNG" />
 
     <!-- Overlay effect when opening sidebar on small screens -->
     <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
         id="myOverlay"></div>
-
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left:340px;margin-right:40px">
-
         <!-- Header -->
         <div class="w3-container" id="showcase">
-            
-            
-             <table >
+            <table>
                 <tr>
-                    <td style="width:1200px">
-                  
-                    <b><i>Fast social media search</i></b>
-                    </td>
-                    
                     <td>
-            <a *ngIf="auth.isAuthenticated()" [routerLink]='["/profile"]' >
-                <span class='glyphicon glyphicon-user'></span>  <app-profile></app-profile>
-            </a>
-        </td>
-       
-       
-        <td>
-            <a *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
-                <button class="btnlogin">Log out </button>
-               
-            </a></td>
-            <td style="width:200px">
-                    <a *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
-                        <button class="btnlogin">Login </button>
-                
-            </a>
-        </td>
-        </tr>
-        </table>
-                <br>   
-            
-        
+                        <p class="header-text">Fast social media search</p>
+                    </td>
+                    <td>
+                        <a *ngIf="auth.isAuthenticated()" [routerLink]='["/profile"]'>
+                            <span clas  s='glyphicon glyphicon-user'></span><app-profile></app-profile>
+                        </a>
+                    </td>
+                    <td>
+                        <a *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
+                            <button class="btnlogin">Log out </button>
+
+                        </a>
+                    </td>
+                    <td>
+                        <a *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
+                            <button class="btnlogin">Login </button>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="top-nav">
+            <table>
+                <tr>
+                    <td>
+                        <button (click)="ShowHidePanels('share')" class="bigbuttons1">Share Video</button>
+                    </td>
+                    <td>
+                        <button (click)="ShowHidePanels('upload')" class="bigbuttons1">Upload Data</button>
+                    </td>
+                    <td> <button (click)="ShowHidePanels('faq')" class="bigbuttons1">App store</button>
+                    </td>
+                    <td>
+                        <button (click)="ShowHidePanels('chatrooms')" class="bigbuttons1">Chat rooms</button>
+
+                    </td>
+                    <td>
+                        <button class="bigbuttons1">Buy / Sell Videos</button>
+
+                    </td>
+                </tr>
+            </table>
         </div>
 
-
-        <table>
-            <tr>
-                <td>
-                    <button (click)="ShowHidePanels('share')" class="bigbuttons1">Share Video</button>
-                </td>
-                <td>
-                    <button (click)="ShowHidePanels('upload')" class="bigbuttons1">Upload Data</button>
-                </td>
-                <td> <button (click)="ShowHidePanels('faq')" class="bigbuttons1">App store</button>
-                </td>
-                <td>
-                    <button (click)="ShowHidePanels('chatrooms')" class="bigbuttons1">Chat rooms</button>
-        
-                </td>
-               <td>
-                    <button  class="bigbuttons1">Buy / Sell Video</button>
-        
-                </td>
-            </tr>
-        </table>
         <!-- Photo grid (modal) -->
-        <div *ngIf="showSharePanel" style="align-items:right ;border:1px solid black;padding: 10px;background-color:##00d800" >
-        <button type="button" (click) = "ShowShreLink()" >Share</button> 
-        {{shareLink}}
-       
+        <div *ngIf="showSharePanel"
+            style="align-items:right ;border:1px solid black;padding: 10px;background-color:#00d800">
+            <button type="button" (click)="ShowShreLink()">Share</button>
+            {{shareLink}}
+
         </div>
         <div *ngIf="showUploadDataPanel" class="w3-half">
-        
-            <summary style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(223, 238, 223)">
+
+            <summary
+                style="align-items:right ;border:1px solid black;padding: 10px;background-color:rgb(223, 238, 223)">
                 Upload content
                 <span class="icon">👇</span>
             </summary>
-            
+
             <div>
                 <app-blobupload></app-blobupload>
             </div>
-           
-  </div><div>
-    <div *ngIf="showFAQ">
+
+        </div>
+        <div>
+            <div *ngIf="showFAQ">
                 <app-appstore></app-appstore>
             </div>
             <div *ngIf="showChatrooms">
                 <app-chatrooms></app-chatrooms>
             </div>
+            <br>
+            <div class="w3-row-padding">
 
 
-        <br>
-        <div class="w3-row-padding">
-            
 
-               
                 <div *ngIf="type === 'video'">
-                    <my-video  [searchword]=searchword></my-video>
+                    <my-video [searchword]=searchword></my-video>
                 </div>
-a
                 <div *ngIf="type === 'image'">
-                    <app-image-viewer  [searchword]=searchword></app-image-viewer>
-                </div>             
+                    <app-image-viewer [searchword]=searchword></app-image-viewer>
+                </div>
 
                 <div style='overflow:scroll; width:1200px;height:700px;' *ngIf="type != 'video' && type != 'image'">
                     <app-table [searchword]=searchword [type]="type"></app-table>
@@ -236,64 +209,64 @@ a
         <!-- Services -->
         <div class="w3-container" id="services" style="margin-top:75px">
             <h1 class="w3-xxxlarge w3-text-red"><b>Services.</b></h1>
-            <hr style="width:50px;border:5px solid red" class="w3-round">
-        
-        <table style=" width: 940px;  height:400px;    font-size:24px;  background-image: linear-gradient(to right, lightblue,white);  color:green;  font-weight:6300; " >
-            <tr>
-                <td style="width:200px">
-                    Movies
-                </td>
-                <td>
-                    To find best movies I find from talash instead of going by
-                    imdb or rotton tomottow rating.
-                </td>
-        
-        
-            </tr>
-        
-        
-            <tr>
-                <td>
-                    Chat rooms
-                </td>
-                <td>
-                    no more zoom no more google just talash
-                </td>
-        
-            </tr>
-        
-        
-            <tr>
-                <td>
-                    spam or ads,,
-                </td>
-                <td>
-                    No spammers and no ads while playing videos..
-                </td>
-        
-                .
-            </tr>
-        
-            <tr>
-                <td>
-                    Premium content
-                </td>
-                <td>
-                    Just like flickr or other good sies it is site for enjoying hobby intead of paradise for spamers or annoying
-                    ads
-                </td>
-        
-            </tr>
-            <tr>
-                <td>
-                    Sharing ..
-                </td>
-                <td>
-                    Fecility to share with social media and only to freinds.
-                    features to store vidoes and images and chat sessions.
-                </td>
-            </tr>
-        </table>
+            <hr style="width:50px;border:5px solid rgb(0, 0, 0)" class="w3-round">
+
+            <table
+                style=" width: 940px;  height:400px;    font-size:24px;  background-image: linear-gradient(to right, lightblue,white);  color:green;  font-weight:6300; ">
+                <tr>
+                    <td style="width:200px">
+                        Movies
+                    </td>
+                    <td>
+                        To find best movies I find from talash instead of going by
+                        imdb or rotton tomottow rating.
+                    </td>
+
+
+                </tr>
+
+
+                <tr>
+                    <td>
+                        Chat rooms
+                    </td>
+                    <td>
+                        no more zoom no more google just talash
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <td>
+                        spam or ads,,
+                    </td>
+                    <td>
+                        No spammers and no ads while playing videos..
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Premium content
+                    </td>
+                    <td>
+                        Just like flickr or other good sies it is site for enjoying hobby intead of paradise for spamers
+                        or annoying
+                        ads
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        Sharing ..
+                    </td>
+                    <td>
+                        Fecility to share with social media and only to freinds.
+                        features to store vidoes and images and chat sessions.
+                    </td>
+                </tr>
+            </table>
 
             <p>Classical search is always has limitations. Moving all users to Context based search and focus on premium
                 content is Talaash team brings to users.</p>
@@ -338,77 +311,77 @@ a
         </div>
 
         <div class="w3-row-padding">
-           <table>
-        <tr>
-            <td>
-                <div class="w3-half w3-margin-bottom">
-                <ul class="w3-ul w3-light-grey w3-center">
-                    <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-                    <li class="w3-padding-16">Favourites</li>
-                    <li class="w3-padding-16">Add and Search content </li>
-                    <li class="w3-padding-16">Chat features</li>
-                   
-                    <li class="w3-padding-16">Share favourites</li>
-                    <li class="w3-padding-16">Tag and filter</li>
-                  <li class="w3-padding-16">Video Download</li>
-                  <li class="w3-padding-16">Video Download</li>
+            <table>
+                <tr>
+                    <td>
+                        <div class="w3-half w3-margin-bottom">
+                            <ul class="w3-ul w3-light-grey w3-center">
+                                <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+                                <li class="w3-padding-16">Favourites</li>
+                                <li class="w3-padding-16">Add and Search content </li>
+                                <li class="w3-padding-16">Chat features</li>
 
-                    <li class="w3-padding-16">
-                        <h2>$ 0</h2>
-                        <span class="w3-opacity"></span>
-                    </li>
-                    <li class="w3-light-grey w3-padding-34">
-                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-                    </li>
-                </ul>
-            </div>
-                </td>
-                <td>
-                    <div class="w3-half">
-                <ul class="w3-ul w3-light-grey w3-center">
-                    <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
-                    <li class="w3-padding-16">Private Content </li>
-                    <li class="w3-padding-16">Custom search</li>
-                    <li class="w3-padding-16">Chat features </li>
-                    <li class="w3-padding-16">Free custom search healp</li>
-                    <li class="w3-padding-16">Video Download</li>
-                  <li class="w3-padding-16">Video Download</li>
-                  <li class="w3-padding-16">Video Download</li>
-                    <li class="w3-padding-16">
-                        <h2>$ 20</h2>
-                        <span class="w3-opacity"></span>
-                    </li>
-                    <li class="w3-light-grey w3-padding-34">
-                        <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
-                    </li>
-                </ul>
-            </div>
-                </td>
-            <td>
-                    <div class="w3-half">
-                <ul class="w3-ul w3-light-grey w3-center">
-                    <li class="w3-red w3-xlarge w3-padding-32">Pro++</li>
-                  
-                    <li class="w3-padding-16"> Private Content</li>
-                    <li class="w3-padding-16">Custom search</li>
-                    <li class="w3-padding-16">Chat features </li>
-                    <li class="w3-padding-16">Free custom search healp</li>
-                   
-                   <li class="w3-padding-16">Sell Videos online</li>
-                   <li class="w3-padding-16">Reports </li>
-                   <li class="w3-padding-16">More Sales leads/contact</li>
-                    <li class="w3-padding-16">
-                        <h2>$ 100</h2>
-                        <span class="w3-opacity"></span>
-                    </li>
-                    <li class="w3-light-grey w3-padding-34">
-                        <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
-                    </li>
-                </ul>
-            </div>
-                </td>
-            </tr>
-        </table>
+                                <li class="w3-padding-16">Share favourites</li>
+                                <li class="w3-padding-16">Tag and filter</li>
+                                <li class="w3-padding-16">Video Download</li>
+                                <li class="w3-padding-16">Video Download</li>
+
+                                <li class="w3-padding-16">
+                                    <h2>$ 0</h2>
+                                    <span class="w3-opacity"></span>
+                                </li>
+                                <li class="w3-light-grey w3-padding-34">
+                                    <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="w3-half">
+                            <ul class="w3-ul w3-light-grey w3-center">
+                                <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+                                <li class="w3-padding-16">Private Content </li>
+                                <li class="w3-padding-16">Custom search</li>
+                                <li class="w3-padding-16">Chat features </li>
+                                <li class="w3-padding-16">Free custom search healp</li>
+                                <li class="w3-padding-16">Video Download</li>
+                                <li class="w3-padding-16">Video Download</li>
+                                <li class="w3-padding-16">Video Download</li>
+                                <li class="w3-padding-16">
+                                    <h2>$ 20</h2>
+                                    <span class="w3-opacity"></span>
+                                </li>
+                                <li class="w3-light-grey w3-padding-34">
+                                    <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="w3-half">
+                            <ul class="w3-ul w3-light-grey w3-center">
+                                <li class="w3-red w3-xlarge w3-padding-32">Pro++</li>
+
+                                <li class="w3-padding-16"> Private Content</li>
+                                <li class="w3-padding-16">Custom search</li>
+                                <li class="w3-padding-16">Chat features </li>
+                                <li class="w3-padding-16">Free custom search healp</li>
+
+                                <li class="w3-padding-16">Sell Videos online</li>
+                                <li class="w3-padding-16">Reports </li>
+                                <li class="w3-padding-16">More Sales leads/contact</li>
+                                <li class="w3-padding-16">
+                                    <h2>$ 100</h2>
+                                    <span class="w3-opacity"></span>
+                                </li>
+                                <li class="w3-light-grey w3-padding-34">
+                                    <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
 
         </div>
 
