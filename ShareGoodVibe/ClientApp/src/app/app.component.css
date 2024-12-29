@@ -1,4 +1,3 @@
-
 #sides {
     margin: 0;
 }
@@ -13,50 +12,65 @@
     float: left;
     width: 55%;
     overflow: hidden;
-} 
+}
+
 .container {
     width: 120%;
-    height:20px;
+    height: 20px;
     background: silver;
-  
+
 }
 
 .one {
-	float: left;
-	width: 50%;
-	overflow: hidden;
-	background: #000080;
-	margin-top: 5%;
-	margin-left: 2%;
-	float: left;
-	border-radius: 5px;
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    background: #000080;
+    margin-top: 5%;
+    margin-left: 2%;
+    float: left;
+    border-radius: 5px;
 }
 
 .two {
-	border-radius: 5px;
-	border: 2px solid #73AD21;
-	float: right;
-	width: 15%;
-	overflow: hidden;
-	margin-left: 2%;
-	margin-top: 5%;
-	margin-right: 2%;
-	width: 15%;
-	background: #FF8C00;
+    border-radius: 5px;
+    border: 2px solid #73AD21;
+    float: right;
+    width: 15%;
+    overflow: hidden;
+    margin-left: 2%;
+    margin-top: 5%;
+    margin-right: 2%;
+    width: 15%;
+    background: #FF8C00;
 }
-.w3-container:after, .w3-container:before, .w3-panel:after, .w3-panel:before, .w3-row:after, .w3-row:before, .w3-row-padding:after, .w3-row-padding:before,
-.w3-cell-row:before, .w3-cell-row:after, .w3-clear:after, .w3-clear:before, .w3-bar:before, .w3-bar:after {
+
+.w3-container:after,
+.w3-container:before,
+.w3-panel:after,
+.w3-panel:before,
+.w3-row:after,
+.w3-row:before,
+.w3-row-padding:after,
+.w3-row-padding:before,
+.w3-cell-row:before,
+.w3-cell-row:after,
+.w3-clear:after,
+.w3-clear:before,
+.w3-bar:before,
+.w3-bar:after {
     content: "";
     display: table;
     clear: both
 }
+
 .w3-sidebar {
-     height: 150%;
+    height: 150%;
     width: 100%;
     max-width: 220px;
     background-color: #D70040;
-    color:white;
-  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fimage-vector%2Fyellow-gray-gradient-triangle-pattern-vector-1907956954&psig=AOvVaw0aIc01jN8qxI0PPWMEav3O&ust=1725091358308000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKiGpaOgnIgDFQAAAAAdAAAAABAEpaper.gif");
+    color: white;
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fimage-vector%2Fyellow-gray-gradient-triangle-pattern-vector-1907956954&psig=AOvVaw0aIc01jN8qxI0PPWMEav3O&ust=1725091358308000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKiGpaOgnIgDFQAAAAAdAAAAABAEpaper.gif");
     position: fixed !important;
     z-index: 1;
     overflow: auto
@@ -65,41 +79,44 @@
 
 
 body {
-    background-image: url(https://static.vecteezy.com/system/resources/previews/002/282/910/original/elegant-white-background-free-vector.jpg);
+    /* background-image: url(https://static.vecteezy.com/system/resources/previews/002/282/910/original/elegant-white-background-free-vector.jpg); */
     background-repeat: repeat;
+    padding: 0;
+    margin: 0;
 }
 
 details {
     user-select: none;
-  }
-  
-  details>summary span.icon {
+}
+
+details>summary span.icon {
     width: 24px;
     height: 24px;
     transition: all 0.3s;
     margin-left: auto;
-  }
-  
-  details[open] summary span.icon {
+}
+
+details[open] summary span.icon {
     transform: rotate(180deg);
-  }
-  
-  summary {
+}
+
+summary {
     display: flex;
     cursor: pointer;
-  }
-  
-  summary::-webkit-details-marker {
+}
+
+summary::-webkit-details-marker {
     display: none;
-  }
-  
+}
 
 
-    .w3-btn:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
-    }
 
-.w3-btn, .w3-button {
+.w3-btn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.w3-btn,
+.w3-button {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -108,93 +125,123 @@ details {
     user-select: none
 }
 
-    .w3-disabled, .w3-btn:disabled, .w3-button:disabled {
-        cursor: not-allowed;
-        opacity: 0.3
-    }
+.w3-disabled,
+.w3-btn:disabled,
+.w3-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.3
+}
 
-        .w3-disabled *, :disabled * {
-            pointer-events: none
-        }
+.w3-disabled *,
+:disabled * {
+    pointer-events: none
+}
 
-        .w3-btn.w3-disabled:hover, .w3-btn:disabled:hover {
-            box-shadow: none
-        }
+.w3-btn.w3-disabled:hover,
+.w3-btn:disabled:hover {
+    box-shadow: none
+}
 
 
-.bigbuttons1{
-    height:100px;
-    width:300px;
-        /* Adding the rounded corners */
-        border-radius: 5px;
+.bigbuttons1 {
+    /* width:300px; */
+    /* Adding the rounded corners */
+    border-radius: 42px;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 2em;
+    cursor: pointer;
 
-        border: 1px solid #000;
-        padding: 10px 20px;
-        background: lightgreen ;
-        font-size: 2em;
-        cursor: pointer;
-    
-    }
-    .bigbuttons1{
-        height:40px;
-        width: 255px;
-            /* Adding the rounded corners */
-            align-items: center;
-            background-color: initial;
-            background-image: linear-gradient(#4681f4, rgba(128, 193, 227, 0.84) 50%);
-            border-radius: 42px;
-            border-width: 0;
-            box-shadow: rgba(57, 31, 91, 0.24) 0 2px 2px,rgba(179, 132, 201, 0.4) 0 8px 12px;
-            color: #FFFFFF;
-            cursor: pointer;
-            display: flex;
-            font-family: Quicksand,sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            justify-content: center;
-            letter-spacing: .04em;
-            line-height: 16px;
-            margin: 10px;
-            text-align: center;
-            text-decoration: none;
-            text-shadow: rgba(248, 85, 85, 0.4) 0 0 4px,rgba(255, 255, 255, 0.2) 0 0 12px,rgba(57, 31, 91, 0.6) 1px 1px 4px,rgba(57, 31, 91, 0.32) 4px 4px 16px;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            vertical-align: baseline;
-            padding:20px;
+}
 
-        
-        
-        }
-        .bktable {
-            background: repeating-linear-gradient(
-                45deg,
-                white 0%,
-                lightblue 100%
-            );
-        }
-        .btnlogin {
-            cursor: pointer;
-            border: 1px solid #3498db;
-            background-color: #3c07071a;
-            height: 40px;
-            width: 160px;
-            color:black;
-            font-size: 1.5em;
-            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
-        }
-        tr:nth-of-type(even	) {
-            background-image: linear-gradient(white, white), linear-gradient(to right, lightblue,red);
-            }
-       
-        
-        .responsive {
+.bigbuttons1 {
+    height: 40px;
+    /* Adding the rounded corners */
+    align-items: center;
+    background-color: initial;
+    background-image: linear-gradient(#4681f4, rgba(128, 193, 227, 0.84) 50%);
+    box-shadow: rgba(57, 31, 91, 0.24) 0 2px 2px, rgba(179, 132, 201, 0.4) 0 8px 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    font-family: Quicksand, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    justify-content: center;
+    letter-spacing: .04em;
+    line-height: 16px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: rgba(248, 85, 85, 0.4) 0 0 4px, rgba(255, 255, 255, 0.2) 0 0 12px, rgba(57, 31, 91, 0.6) 1px 1px 4px, rgba(57, 31, 91, 0.32) 4px 4px 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    padding: 20px;
+}
+
+.bktable {
+    background: repeating-linear-gradient(45deg,
+            white 0%,
+            lightblue 100%);
+}
+
+.btnlogin {
+    cursor: pointer;
+    border: 1px solid #3c07071a ;
+    border-radius: 20px;
+    background-color: #3498db;
+    height: 40px;
+    width: 160px;
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    font-weight: 600;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+tr:nth-of-type(even) {
+    background-image: linear-gradient(white, white), linear-gradient(to right, lightblue, red);
+}
+
+
+.responsive {
     width: 100%;
     max-width: 400px;
     max-height: 350px;
     height: auto;
     min-width: 130px;
-    min-height:100px;
-  }
+    min-height: 100px;
+}
+
+.top-nav table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.top-nav table tr {
+    justify-content: space-between;
+}
+
+
+#showcase table{
+    justify-content: space-between;
+    color: white;
+    font-weight: 700;
+    text-transform: capitalize;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px;
+}
+#showcase table td{
+    text-align: center;
     
+}
+
+.header-text{
+    color: #000;
+    font-size: 1.5rem;
+    letter-spacing: 0.75px;
+}
