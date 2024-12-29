@@ -1,0 +1,16 @@
+.avatar{
+    border: 2px solid rgb(121, 121, 121);
+    border-radius: 42px;
+    transition: 0.5s ease-in-out;
+}
+.avatar:hover{
+    width: 60px;
+    height: 60px;
+    border: 2px solid black;
+}
+.nickname{
+    color: black;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
